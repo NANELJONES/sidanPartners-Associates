@@ -23,6 +23,9 @@
 
 }
 
+.service_box div{
+  border:1px solid black;
+}
 
 .big_text{
   @apply text-[4em] cursor-pointer font-[700] md:text-[4em] lg:text-[6em]  2xl:text-[90px];
@@ -82,7 +85,14 @@ scroll-behavior: smooth;
   -webkit-clip-path: polygon(18% 0, 100% 0, 100% 82%, 85% 100%, 0 100%, 0 18%);
   clip-path: polygon(18% 0, 100% 0, 100% 82%, 85% 100%, 0 100%, 0 18%);
   overflow: hidden;
-  position: relative;
+
+}
+
+.oct_box{
+  -webkit-clip-path: polygon(18% 0, 100% 0, 100% 82%, 85% 100%, 0 100%, 0 18%);
+  clip-path: polygon(18% 0, 100% 0, 100% 82%, 85% 100%, 0 100%, 0 18%);
+  overflow: hidden;
+
 }
 
 .limited-text_header {

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { IoArrowDownCircleOutline } from "react-icons/io5";
 import { TextAnimation } from "./TextsAnimations";
+import { Poppins } from "next/font/google";
 
 const WhatWeOffer = () => {
   const parentRef = useRef(null);
@@ -36,44 +37,86 @@ const WhatWeOffer = () => {
   ];
 
   return (
-    <div className="relative bg-primary_color_light bg_blur min-h-screen flex flex-col py-10 md:py-20 gap-10 lg:gap-20 w-full p-10">
+    <div className="relative bg-primary_color-80 bg_blur min-h-screen flex flex-col py-10 md:py-20 gap-10 lg:gap-20 w-full p-10">
     <TextAnimation>
-    <h1 className="text-primary_color      sticky top-10 md:top-[100px] z-10  text-4xl md:text-[6em]">
+    <h1 className="text-secondary_color font-Poppins  bg-primary_color   sticky top-10 md:top-[100px] z-10  text-4xl md:text-[6em]">
         What We Offer
       </h1>
     </TextAnimation>
 
       <div className="relative w-full  min-h-[200vh] " ref={parentRef}>
         <div className="sticky top-20 md:top-40  w-full overflow-hidden">
-          <motion.div ref={scrollRef} style={{ x }} className="flex items-center">
+          <motion.div ref={scrollRef} style={{ x }} className="flex  items-center">
             {services.map((service, index) =>
               service.name === "Line" ? (
                 <span key={index} className="flex items-center gap-0 w-auto shrink-0">
-                  <IoArrowDownCircleOutline className="text-primary_color rotate-90 text-3xl md:text-6xl" />
+                  <IoArrowDownCircleOutline className="text-secondary_color rotate-90 text-3xl md:text-6xl" />
                   <motion.div
                   initial={{width:0}}
                   whileInView={{width:"8em"}}
                   transition={{duration:1}}
                   
-                  className="flex-grow shrink-0  h-[3px] bg-primary_color"></motion.div> 
+                  className="flex-grow shrink-0  h-[3px] bg-secondary_color"></motion.div> 
                   
-                  <IoArrowDownCircleOutline className="text-primary_color -rotate-90 text-3xl md:text-6xl" />
+                  <IoArrowDownCircleOutline className="text-secondary_color -rotate-90 text-3xl md:text-6xl" />
                 </span>
               ) : (
-                <div key={index} className="flex flex-col gap-4 items-center w-[20em] shrink-0 md:w-1/2 px-4">
-                  {service.gif && (
-                    <div className="relative hex_box w-80 h-80 md:w-60 md:h-60 lg:w-96 lg:h-96">
+                <div key={index} className="relative  flex flex-col gap-4 items-start  shrink-0 px-4">
+                      
+
+                 <div className="flex gap-[2em] items-start ">
+                  
+                 <div className="relative oct_box w-80 h-80 lg:w-96 lg:h-96">
                       <Image src={service.gif[0]} alt={service.name} fill className="object-cover" />
                     </div>
-                  )}
-                  <div className="flex  items-center md:w-2/3 gap-4">
+                   <div>
+                   <motion.div
+                   initial={{x:0}}
+                   whileInView={{x:-40}}
+                   transition={{duration:2}}
+                   className="absolute top-0 right-10 md:relative top-0 right-0 self-start w-[20em] h-[15em] hex_box bg-secondary_color"></motion.div>
+           
+             {/* Name and Serice on large devices */}
+             <div className="flex hidden md:flex items-center md:w-3/4 gap-4">
                     {service.icon && (
-                      <img src={service.icon} className="w-8 bg-primary_color rounded-md p-2 h-8 md:w-12 md:h-12" alt={service.name} />
+                      <img src={service.icon} className="w-8 bg-primary_color  shadow-md rounded-md p-2 h-8 md:w-12 md:h-12" alt={service.name} />
                     )}
-                    <h3 className="text-primary_color   leading-tight ">
+                    <h2 className="text-secondary_color   leading-tight ">
+                      {service.name}
+                    </h2>
+                  </div>
+
+
+
+                   </div>
+                 </div>
+           
+
+
+
+
+
+
+
+
+
+
+
+           
+                    
+
+                               {/* Name and Serice  on small devices*/}
+             <div className="flex md:hidden  self-start items-senter w-[70%] gap-4">
+                    {service.icon && (
+                      <img src={service.icon} className="w-8 bg-secondary_color rounded-md p-2 h-8 md:w-12 md:h-12" alt={service.name} />
+                    )}
+                    <h3 className="text-secondary_color   leading-tight ">
                       {service.name}
                     </h3>
                   </div>
+              
+
+
                 </div>
               )
             )}

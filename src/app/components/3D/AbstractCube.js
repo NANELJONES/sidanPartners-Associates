@@ -23,7 +23,7 @@ const AbstractCube = () => {
       {/* Spline 3D Scene */}
       <main className="h-full">
         <Spline
-          scene="https://prod.spline.design/tHsluCGsRMPTK6Er/scene.splinecode"
+          scene="https://prod.spline.design/KlHTYC7FnnUI3ghP/scene.splinecode"
           onLoad={() => setIsLoading(false)} // Hide image when Spline loads
         />
       </main>

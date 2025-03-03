@@ -58,7 +58,7 @@ try{
 export const getBlogs = async (first = 3, after = null) => {
   const query = gql`
     query MyQuery($first: Int, $after: String) {
-      postsConnection(first: $first, after: $after) {
+      postsConnection(first: $first, after: $after,orderBy: createdAt_DESC) {
         edges {
           node {
             slug
@@ -151,7 +151,7 @@ export const getBlogs = async (first = 3, after = null) => {
 export const GetSimilarPosts = async (categories, slugToExclude) => {
   console.log("This is the Categories being passed:", categories);
   const query = gql`
-    query GetSimilarPosts($categories: [String!], $slugToExclude: String!) {
+    query GetSimilarPosts($categories: [String!], $slugToExclude: String!,orderBy: createdAt_DESC) {
       postsConnection(
         where: {
           AND: [
@@ -206,7 +206,7 @@ export const GetSimilarPosts = async (categories, slugToExclude) => {
 export const getBlogFromCategory = async (category) => {
   const query = gql`
   query MyQuery($category: String!) {
-    postsConnection(where: { category_some: { category: $category } }) {
+    postsConnection(where: { category_some: { category: $category } },orderBy: createdAt_DESC) {
       edges {
         node {
           id
@@ -228,6 +228,7 @@ export const getBlogFromCategory = async (category) => {
           excerpt
           title
           featuredPost
+          createdAt
           category {  # Fixed: Ensure it's 'categories' if it's an array
             category
           }
@@ -261,7 +262,7 @@ export const getCategories = async () => {
 
   const query = gql`
   query MyQuery {
-  categoriesConnection {
+  categoriesConnection(orderBy: createdAt_DESC) {
     edges {
       node {
         category
@@ -286,7 +287,7 @@ export const getCategories = async () => {
 export const GetSingleBlogPost = async (slug) => {
   const query = gql`
   query GetSingleBlogPost($slug: String!) {
-    post(where: { slug: $slug }) {
+    post(where: { slug: $slug },orderBy: createdAt_DESC) {
       slug
       stage
       title
@@ -329,10 +330,11 @@ try {
 export const getFeaturedPost = async()=>{
   const query = gql`
   query MyQuery {
-  postsConnection(where: {featuredPost: true}) {
+  postsConnection(where: {featuredPost: true},orderBy: createdAt_DESC) {
     edges {
       node {
         id
+        createdAt
         title
         slug
          coverImage {

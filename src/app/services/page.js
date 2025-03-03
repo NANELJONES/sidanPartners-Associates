@@ -10,6 +10,7 @@ import Image from "next/image";
 import { AllLines } from "../components/AllLines";
 import { TopHorizontal, LeftVertical,RightVertical, BottomHorizontal } from "../components/AllLines";
 import TiltComponent from "../components/Tilt";
+import { TextAnimation } from "../components/TextsAnimations";
 const Page = () => {
 
   const services = [
@@ -57,9 +58,9 @@ const Page = () => {
         <div className="max-h-[800px]  h-[100vh] min-h-[300px]">
             {/* Header Intro Text */}
           <div className="flex flex-col gap-2  md:flex-row py-2    w-full  items-center justify-between    relative border-primary_color h-auto ">
-            <div className={`w-full self-start md:w-1/2 "w-full self-start`}>
-              <h1 className="text-[5em] lg:text-[6em] w-[80%] text-left ">
-                Services
+            <div className={`w-full self-start md:w-2/3 "w-full self-start`}>
+              <h1 className="text-[5em] lg:text-[6em]  text-left ">
+                Our Services
               </h1>
 
               <div
@@ -94,21 +95,48 @@ const Page = () => {
 
         {/* Here is how */}
 
-        <div className="normal_div gap-[2em] lg:gap-[4em]  items-center">
-            <div className="w-full md:w-1/2">
-            <h2 className=" ">Here's How:</h2>
+        <div className="normal_div gap-[2em] lg:gap-[4em] mt-[2em]  md:py-20 items-center">
+        <motion.div 
+  className="w-full md:w-1/2 self-end flex gap-[2em]"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={{
+    visible: { transition: { staggerChildren: 0.5 } } // Stagger animations
+  }}
+>
+  <motion.div  
+      initial={{ rotate: -45 }}
+      animate="visible"
+      whileInView={{ rotate: 0 }}  
+      transition={{ duration: 1 }}
+      className="w-[20vw] h-[50vh] max-w-[8em] max-h-[15em] bg-primary_color"> 
+  </motion.div>
 
-<video 
-autoPlay
-muted
-loop
-src="/service icons/Here Is Us.mp4" className=" w-full md:mt-[3em] max-h-[300px] object-cover" />
-            </div>
+  <motion.div  
+      initial={{ rotate: 45 }}
+      animate="visible"
+      whileInView={{ rotate: 0 }}  
+      transition={{ duration: 1 }}
+      className="w-[20vw] h-[50vh] max-w-[8em] max-h-[15em] bg-primary_color"> 
+  </motion.div>
+
+  <motion.div  
+      initial={{ rotate: 90 }}
+      animate="visible"
+      whileInView={{ rotate: 0 }}  
+      transition={{ duration: 1 }}
+      className="w-[20vw] h-[50vh] max-w-[8em] max-h-[15em] bg-primary_color"> 
+  </motion.div>
+
+</motion.div>
+
 
 
 
             {/* this is the other side */}
-            <div className="relative w-[80%] circle_dot flex flex-col gap-[3em] w md:w-1/2 lg:w-1/3">
+            <div className="relative w-[80%] circle_dot flex flex-col gap-[1em] md:gap-[3em] md:w-1/2 ">
+            <h2 className=" ">Here's How:</h2>
            <motion.div
          initial={{ height: "0px" }}
          whileInView={{height:"100%"}} // Use vh for full screen height
@@ -123,16 +151,14 @@ src="/service icons/Here Is Us.mp4" className=" w-full md:mt-[3em] max-h-[300px]
             </AnimateUp>
 
 <AnimateUp>
-            <h6 className=" p-2">Is your project a residential one? Commercial? or industrial? 
-            </h6>
-            </AnimateUp>
-
-<AnimateUp>
-            <h6 className=" p-2">Whatever the need is, we
+            <h6 className=" p-2">Is your project a residential one? Commercial? or industrial? Whatever the need is, we
 deliver top-tier
 construction services tailored to your requirements.
 
-            </h6></AnimateUp> 
+            </h6>
+            </AnimateUp>
+
+
 
 <AnimateUp>
             <h6 className=" p-2">As your Project Managers, we handle every detail—from budgeting to
@@ -149,9 +175,10 @@ construction services tailored to your requirements.
        {/* this is the services side  */}
 
        <div className="w-full bg-primary_color mt-[4em] p-[2em] flex flex-col gap-[3em]">
-                <h4 className=" md:text-[3em]  w-[80%] text-tertiary_color"> Whether you’re envisioning your dream space or need expert project execution, we offer tailored
+              <TextAnimation>
+                <h4 className=" md:text-[3em]  w-[80%] text-tertiary_color">Whether you’re envisioning your dream space or need expert project execution, we offer tailored
                 solutions across: </h4>
-
+                </TextAnimation>
 
                 {services.map((service, index) => (
 <TiltComponent >
@@ -160,7 +187,7 @@ construction services tailored to your requirements.
                 <LeftVertical></LeftVertical>
                 <RightVertical></RightVertical>
                 <BottomHorizontal></BottomHorizontal>
-            <div className='hex_box self-center md:self-start w-full w-[20em] h-[20em] md:w-1/2 h:-[15em] lg:w-[30em] lg:h-[30em] relative max-w-[350px] max-h-[400px]'>
+            <div className='hex_box self-center md:self-start w-full  h-[20em] md:w-1/2 h:-[15em] lg:w-[30em] lg:h-[30em] relative max-w-[350px] max-h-[400px]'>
                     <Image 
                       src={service.gif[0]} 
                       alt={service.name}
@@ -169,7 +196,7 @@ construction services tailored to your requirements.
                     />
             </div>
 
-            <div className='flex   w-[80%] md:w-1/2 md:flex-row  gap-2 items-center md:gap-4 md:w-1/2'> 
+            <div className='flex  flex-col items-start  w-[80%] md:w-1/2 md:flex-row  gap-2 md:items-center md:gap-4 md:w-1/2'> 
             <img 
   src={service.icon} 
   className=" md:bg-transparent md:p-2 md:hover:rotate-90 transition-ease duration-500 rounded-md shadow-md 
@@ -177,8 +204,9 @@ construction services tailored to your requirements.
   alt={service.name} 
 />
 
-              
+              <TextAnimation>
               <h1 className='text-primary_color_light    md:text-left text-2xl md:text-4xl leading-[2em] lg:text-[3em]'>{service.name}</h1>
+              </TextAnimation>
             </div>
       </div>
 </TiltComponent>
@@ -187,15 +215,15 @@ construction services tailored to your requirements.
             </div>
 
 {/* this is the cta */}
-            <div className="flex py-[8em] bg-primary_color_light items-center flex-col gap-[1em]">
+            <div className="flex py-[8em] bg-tertiary_color items-center flex-col gap-[1em]">
            
 <div className="md:w-2/3 w-[80%] lg:w-1/2 mx-auto flex flex-wrap items-center justify-evenly">
 
 
-<h1 className="text-center large_text">  Ready to get <br/>Started? </h1>
+<h1 className="text-center  ">  Ready to get <br/>Started? </h1>
 
 </div>
- <Link href={"/contactUs"}> <button className=" border-none rounded-none bg-tertiary_color text-secondary_color"> Request a Consultation </button> </Link>
+ <Link href={"/contactUs"}> <button className=" border-none rounded-none bg-primary_color text-secondary_color"> Request a Consultation </button> </Link>
   
                 
          </div>

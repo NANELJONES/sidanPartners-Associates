@@ -154,7 +154,7 @@ const Page = () => {
                           : getExcerpt(each_client.node?.testimony)}
                       </p>
                       <button
-                        className="text-primary_color_light mt-2 bg-none rounded-none border-0 p-1 border border-b-2"
+                        className="text-primary_color_light mt-2 bg-none bg-transparent rounded-none border-0 p-1 border border-b-2"
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleTestimonial(index);

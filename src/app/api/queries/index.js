@@ -11,7 +11,8 @@ export const getProjects = async (first = 5, after = null, projectCategory = "Al
       projectsConnection(
         first: $first, 
         after: $after, 
-        where: { projectCategory: $projectCategory }
+        where: { projectCategory: $projectCategory },
+        orderBy: createdAt_DESC
       ) {
         edges {
           node {
@@ -23,6 +24,7 @@ export const getProjects = async (first = 5, after = null, projectCategory = "Al
             projectName
             projectStatus
             slug
+            createdAt
             startDate
             projectImages {
               url
@@ -39,7 +41,7 @@ export const getProjects = async (first = 5, after = null, projectCategory = "Al
 
   const Allquery = gql`
   query MyQuery($first: Int, $after: String) {
-    projectsConnection(first: $first, after: $after) {
+    projectsConnection(first: $first, after: $after,orderBy: createdAt_DESC) {
       edges {
         node {
           projectDetails
@@ -50,6 +52,7 @@ export const getProjects = async (first = 5, after = null, projectCategory = "Al
           projectName
           projectStatus
           slug
+          createdAt
           startDate
           projectImages {
             url
@@ -148,10 +151,11 @@ export const getSingleProject = async (slug) => {
 export const getGallery = async (first = 2, after = null) => {
   const query = gql`
     query MyQuery($first: Int, $after: String) {
-      galleriesConnection(first: $first, after: $after) {
+      galleriesConnection(first: $first, after: $after,orderBy: createdAt_DESC) {
         edges {
           node {
             title
+            createdAt
             imageContent {
               url
             }
@@ -214,7 +218,7 @@ export const getTips = async (first = 10, after = null) => {
 export const getEvents = async (first = 1, after = null)=>{
   const query = gql`
   query MyQuery($first: Int, $after: String) {
-    eventsConnection(first: $first, after: $after) {
+    eventsConnection(first: $first, after: $after, orderBy: createdAt_DESC) {
       edges {
         node {
           eventDetails {
@@ -230,6 +234,7 @@ export const getEvents = async (first = 1, after = null)=>{
           eventType
           externalEventLink
           ticketPrice
+          createdAt
           slug
           eventDatesAndTime
           eventCoverImage {
@@ -517,7 +522,7 @@ export const getAvailablePositions = async()=>{
 
 const query = gql`
 query MyQuery {
-  jobPostsConnection {
+  jobPostsConnection(orderBy: createdAt_DESC) {
     edges {
       node {
         slug
@@ -526,6 +531,7 @@ query MyQuery {
         jobName
         id
         jobStatus
+        createdAt
       }
     }
   }
