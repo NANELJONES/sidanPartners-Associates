@@ -89,11 +89,11 @@ const Page = () => {
       <div className="bg-secondary_color right-0 absolute md:w-1/2 h-full"></div>
       <AllLines />
       <Layout1>
-        <div className="p-[1em] lg:p-0 ">
+        <div className="p-[1em] lg:p-0  ">
           <ToastContainer />
           <div className="flex flex-col gap-[3em] md:flex-row">
-            <div className="w-full flex flex-col md:w-1/2 relative">
-              <div className="md:sticky top-[5px] flex flex-col gap-[2em]">
+            <div className="w-full layout_padding flex flex-col md:w-1/2 relative">
+              <div className="md:sticky top-20 flex flex-col gap-[2em]">
                 <h2 className="text-primary_color_light">
                   Hear from Those Who <br /> Trust Us!
                 </h2>
@@ -118,7 +118,7 @@ const Page = () => {
             </div>
 
             <div className="relative z-10 w-full md:w-1/2 gap-[1em] p-2">
-            <div className="bg-primary_color p-4 shadow-lg   md:shadow-none md:bg-secondary_color sticky top-[2px] z-[2] py-4">
+            <div className="bg-primary_color p-4 shadow-lg   md:shadow-none md:bg-secondary_color sticky top-10 z-[2] py-4">
             <h1 className="text-[4em] md:text-[6em] text-secondary_color md:text-primary_color">Reviews</h1>
             <p className="text-secondary_color md:text-primary_color" >Total: {testimonials.data.length}</p>
 

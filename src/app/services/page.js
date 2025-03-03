@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AllLines } from "../components/AllLines";
 import { TopHorizontal, LeftVertical,RightVertical, BottomHorizontal } from "../components/AllLines";
-
+import TiltComponent from "../components/Tilt";
 const Page = () => {
 
   const services = [
@@ -96,13 +96,13 @@ const Page = () => {
 
         <div className="normal_div gap-[2em] lg:gap-[4em]  items-center">
             <div className="w-full md:w-1/2">
-            <h2 className=" md:text-[4em]">Here's How:</h2>
+            <h2 className=" ">Here's How:</h2>
 
 <video 
 autoPlay
 muted
 loop
-src="/service icons/Here Is Us.mp4" className="w-full mt-[3em] max-h-[300px] object-cover" />
+src="/service icons/Here Is Us.mp4" className=" w-full md:mt-[3em] max-h-[300px] object-cover" />
             </div>
 
 
@@ -118,24 +118,24 @@ src="/service icons/Here Is Us.mp4" className="w-full mt-[3em] max-h-[300px] obj
            
            
            <AnimateUp>
-            <h6 className="border-l-4 border-l-tertiary_color md:border-l-0 p-2">Our design services allow us to blend creativity and functionality to match your needs.
+            <h6 className=" p-2">Our design services allow us to blend creativity and functionality to match your needs.
             </h6>
             </AnimateUp>
 
 <AnimateUp>
-            <h6 className="border-l-4 border-l-tertiary_color md:border-l-0 p-2">Is your project a residential one? Commercial? or industrial? 
+            <h6 className=" p-2">Is your project a residential one? Commercial? or industrial? 
             </h6>
             </AnimateUp>
 
 <AnimateUp>
-            <h6 className="border-l-4 border-l-tertiary_color md:border-l-0  p-2">Whatever the need is, we
+            <h6 className=" p-2">Whatever the need is, we
 deliver top-tier
 construction services tailored to your requirements.
 
             </h6></AnimateUp> 
 
 <AnimateUp>
-            <h6 className="border-l-4 border-l-tertiary_color md:border-l-0 p-2">As your Project Managers, we handle every detail—from budgeting to
+            <h6 className=" p-2">As your Project Managers, we handle every detail—from budgeting to
             timelines—ensuring a seamless and stress-free experience.
             </h6>
             </AnimateUp>
@@ -154,7 +154,8 @@ construction services tailored to your requirements.
 
 
                 {services.map((service, index) => (
-      <div key={index} className={`flex flex-col py-[4em] md:flex-row relative ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} gap-[1em] items-center justify-center`}> 
+<TiltComponent >
+<div  className={`flex flex-col py-[4em] md:flex-row relative ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} gap-[1em] items-center justify-center`}> 
                 <TopHorizontal></TopHorizontal>
                 <LeftVertical></LeftVertical>
                 <RightVertical></RightVertical>
@@ -180,6 +181,7 @@ construction services tailored to your requirements.
               <h1 className='text-primary_color_light    md:text-left text-2xl md:text-4xl leading-[2em] lg:text-[3em]'>{service.name}</h1>
             </div>
       </div>
+</TiltComponent>
     ))}
 
             </div>
@@ -188,16 +190,9 @@ construction services tailored to your requirements.
             <div className="flex py-[8em] bg-primary_color_light items-center flex-col gap-[1em]">
            
 <div className="md:w-2/3 w-[80%] lg:w-1/2 mx-auto flex flex-wrap items-center justify-evenly">
-<h1 className="text-[4em] text-center md:text-[5em]"> Ready </h1>
-<h1 className="text-[4em] text-center md:text-[5em]">  to </h1>
-<h1 className="text-[4em] text-center md:text-[5em]"> Get </h1>
-{/* <motion.div
 
 
-className="w-full h-[250px] bg-tertiary_color rounded-md border"></motion.div> */}
-
-
-<h1 className="text-center md:text-[5em]">  Started? </h1>
+<h1 className="text-center large_text">  Ready to get <br/>Started? </h1>
 
 </div>
  <Link href={"/contactUs"}> <button className=" border-none rounded-none bg-tertiary_color text-secondary_color"> Request a Consultation </button> </Link>

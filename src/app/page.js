@@ -19,7 +19,7 @@ const BlogSample = dynamic(() => import("./components/BlogSample"));
 export default function Home() {
   return (
     <div className=" bg-primary_color relative">
-      <AbstractCube></AbstractCube>
+      {/* <AbstractCube></AbstractCube> */}
       
       {/* <div className='border-2 border-primary_color rounded-full absolute left-[50%] top-[30em] z-[10]  flex items-center justify-around   w-[6em] h-[6em] bg-secondary_color-50' >
     <p className='text-secondary_color'> Scroll <br/> Down  <br/> </p>

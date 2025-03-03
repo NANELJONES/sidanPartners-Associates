@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import {Poppins}  from "next/font/google"
 import "./globals.css";
+import { Public_Sans } from "next/font/google";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import NextTopLoader from 'nextjs-toploader';
@@ -29,6 +30,10 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const primary_text = Public_Sans({
+  subsets:["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
 
 
 export const metadata = {
@@ -40,7 +45,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       
-      <body className={`font- ${poppins.className}`} >
+      <body className={`font- ${primary_text.className}`} >
         <Loading>
       <StateContext> 
       <NextTopLoader 
@@ -52,7 +57,7 @@ export default function RootLayout({ children }) {
             <Footer/>
         </StateContext>
         </Loading>
-        
+
       </body>
     </html>
   );

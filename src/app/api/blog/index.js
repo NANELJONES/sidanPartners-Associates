@@ -15,6 +15,7 @@ export const AllBlogs = async ()=>{
         slug
         stage
         title
+        
         excerpt
         content {
           html
@@ -62,6 +63,10 @@ export const getBlogs = async (first = 3, after = null) => {
           node {
             slug
             stage
+                category {
+          category
+        }
+            
             title
             excerpt
             content {

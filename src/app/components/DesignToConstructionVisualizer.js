@@ -6,10 +6,11 @@ import Walls from './Walls'
 
 const DesignToConstructionVisualizer = () => {
   return (
-    <div className='flex flex-col items-start  md:flex-row md:items-center gap-[1em]' >
+    <div className='flex flex-col  items-start  md:flex-row md:items-center gap-[1em]' >
         {/* design */}
             <div className=' flex   items-center gap-[1em]'>
-            <h1 className='text-primary_color_light'>Design</h1>
+            <h1 className='hidden md:block text-primary_color_light'>Design</h1>
+            <h3 className=' md:hidden block text-primary_color_light'>Design</h3>
       <div className='relative w-auto'>
         <AllLines>  </AllLines>
 {/* 
@@ -32,13 +33,18 @@ const DesignToConstructionVisualizer = () => {
             </div>
 
 
-            <h1 className='text-primary_color_light'>to</h1>
+            <h1 className='hidden md:block text-primary_color_light'>to</h1>
+            <h3 className=' md:hidden block text-primary_color_light'>to</h3>
+          
 
 
 
 {/* Construcction */}
-            <div className=' flex items-center gap-[1em] '>
-            <h1 className='text-primary_color_light'>Construction</h1>
+            <div className=' flex items-center  gap-[1em] '>
+            <h1 className='hidden md:block text-primary_color_light'>Construction</h1>
+            <h3 className=' md:hidden block text-primary_color_light'>Construction</h3>
+          
+          
             <div className='scale-[1.5] md:scale-[1]'>
             <Walls></Walls>
             </div>

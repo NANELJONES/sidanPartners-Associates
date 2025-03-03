@@ -5,12 +5,12 @@ import SimpleData from './Data Stats/SimpleData'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import DesignToConstructionVisualizer from './DesignToConstructionVisualizer'
-
-
+import { TextAnimation } from './TextsAnimations'
+import AnimateUp from './AnimateUp'
 
 const Header = () => {
   return (
-  <div className='    max-h-[800px]   flex flex-col justify-between  relative  h-auto min-h-[90vh] md:h-[90vh] gap-10    '>
+  <div className='    max-h-[800px]   flex flex-col justify-between  relative  h-auto  md:h-[90vh] gap-10    '>
   {/* <AllLines ></AllLines> */}
 
   <motion.div 
@@ -18,9 +18,13 @@ const Header = () => {
     whileInView={{ opacity: 1, y: 0,}}
     transition={{ duration: 2, delay:0.2 }}
                     className='w-full p-[2em]   '>
-                                    <h4 className='text-white'>Welcome to</h4>
-                                <h1 className='text-white  md:text-[5em]'>Sidan Associates <br/>
-                                & Partners</h1>
+                                 <AnimateUp>   <h4 className='text-secondary_color'>Welcome to</h4></AnimateUp>
+                             
+                              <h1 className='text-secondary_color  md:text-[5em]'>Sidan Associates <br/>
+                              & Partners</h1>
+
+                             
+
                                 
                       
                     </motion.div>

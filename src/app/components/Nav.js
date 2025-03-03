@@ -1,9 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Nav = () => {
+
+//   useEffect(()=>{
+// set_show_nav(false)
+//   },[])
   const [show_nav, set_show_nav] = useState(false);
   const [sub_menu, set_sub_menu] =  useState("")
 
@@ -40,14 +44,14 @@ const Nav = () => {
   ];
 
   return (
-    <div className="fixed top-0 w-full font-thin overflow-y z-[20] backdrop-blur-md">
+    <div className="fixed top-0 w-full font-thin overflow-y z-[20] backdrop-blur-md ">
       {/* Toggle button for small screens */}
       <Image
         src={show_nav ? "/close.svg" : "/menu.svg"}
         alt="menu"
         width={30}
         height={30}
-        className="absolute top-4 left-4 md:hidden bg-primary_color p-2 rounded-sm z-[200] cursor-pointer"
+        className="absolute top-4 shadow-md left-4 md:hidden bg-primary_color p-2 rounded-sm z-[200] cursor-pointer"
         onClick={() => set_show_nav(!show_nav)}
       />
 
@@ -55,8 +59,11 @@ const Nav = () => {
       <div
  className={`${
   show_nav ? "block pt-20" : "hidden"
-} md:flex example flex-cols items-start md:flex-row md:gap-10 md:items-center p-4 md:p-2 
-w-[80%] md:w-full 
+} md:flex example flex-cols  items-start md:flex-row md:gap-10 md:items-center p-4 md:p-2 
+w-[80%]  lg:w-[60%] 
+md:mx-auto
+rounded-b-lg
+md:border-b-rounded-4
 h-screen md:h-auto 
 max-h-screen md:min-h-[15px]  
 overflow-y-auto md:overflow-visible 
@@ -76,15 +83,19 @@ justify-around shadow-md bg-primary_color`}
              <p 
               onClick={()=>{ set_show_nav(false)}}
              
-             className="text-white  text-left md:hover:text-[1.3em] md:hover:font-semibold transition-all duration-500 md:text-center text-[1.5em] md:text-[0.8em]  cursor-pointer">
+             className="text-white  text-left md:hover:text-[1.3em] md:hover:font-semibold md:hover:text-primary_color_light transition-all duration-500 md:text-center text-[1.5em] md:text-[0.8em]  cursor-pointer">
 
                 {each_value.nav_name}
               </p>
             </Link>  
 
-            {each_value?.sub_menu && sub_menu ===  each_value.nav_name  ? <div className="px-10 md:absolute  md:shadow-xl md:rounded-sm md:top-[2em] md:bg-primary_color  md:w-[15em] md:h-[14em] flex flex-col justify-around items-start px-4   " >
+            {each_value?.sub_menu && sub_menu ===  each_value.nav_name  ? <div className="px-10  md:absolute  md:shadow-xl md:rounded-sm md:top-[2em] md:bg-primary_color  md:w-[15em] md:h-[14em] flex flex-col justify-around items-start px-4   " >
               {each_value?.sub_menu.map((each_sublink, index)=> {
-               return <Link href={each_sublink.sub_link_link} key={index}> <p className="text-white md:hover:text-[1.1em] md:hover:font-semibold transition-all duration-500  text-[1.2em] md:text-[0.8em]  cursor-pointer">{each_sublink.sub_link_name} </p> </Link>
+               return <Link
+               onClick={()=>{
+                set_show_nav(false)
+               }}
+               href={each_sublink.sub_link_link} key={index}> <p className="text-white md:hover:text-[1.1em] mt-[1em] md:hover:font-semibold transition-all duration-500  text-[1.2em] md:text-[0.8em]  cursor-pointer">{each_sublink.sub_link_name} </p> </Link>
               })}
               
 

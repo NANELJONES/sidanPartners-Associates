@@ -80,7 +80,7 @@ const ContactPage = () => {
       <div className="flex flex-col md:flex-row   ">
         {/* Background Image */}
 
-        <div className="w-full flex flex-col  border-b-[1em] border-b-primary_color_light  md:border-b-0  lg:justify-between  gap-[2em] md:w-1/2">
+        <div className="w-full layout_padding   flex flex-col  border-b-[1em] border-b-primary_color_light  md:border-b-0  lg:justify-between  gap-[2em] md:w-1/2">
           <h2 className="text-primary_color_light">
             Start Your Journey with <br/> Sidan Today!
           </h2>
@@ -110,7 +110,7 @@ const ContactPage = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="relative z-10    w-full md:w-1/2  gap-[2em] p-2  flex flex-col justify-between "
+          className="relative layout_padding z-10    w-full md:w-1/2  gap-[2em] p-2  flex flex-col "
         >
           <h1 className=" text-primary_color_light text-[4em] md:text-[6em]">Over here!</h1>
 
