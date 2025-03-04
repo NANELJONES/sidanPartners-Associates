@@ -30,11 +30,18 @@ const Footer = () => {
               <h2 className="text-primary_color font-primary_font_medium  text-left">Contact</h2>
             
 
+              <span className="flex flex-row items-center gap-2 md:gap-5">
+                <MdEmail className="text-primary_color text-[1em]" />
+                <span className="flex flex-col items-center md:items-start">
+                  <p className="text-primary_color">hello@sidanassociates.com</p>
+                </span>
+              </span>
+
                            {/* Phone */}
                            <span className="flex  flex-row items-center gap-2 md:gap-5">
                 <FaPhoneAlt className="text-primary_color text-[1em]" />
                 <span className="flex flex-col items-center md:items-start">
-                  <p className="text-primary_color">++233 55 141 4038</p>
+                  <p className="text-primary_color">+233 55 141 4038</p>
                 </span>
               </span>
 
@@ -53,12 +60,7 @@ const Footer = () => {
  
 
 
-              <span className="flex flex-row items-center gap-2 md:gap-5">
-                <MdEmail className="text-primary_color text-[1em]" />
-                <span className="flex flex-col items-center md:items-start">
-                  <p className="text-primary_color">hello@sidanassociates.com</p>
-                </span>
-              </span>
+
             </div>
 
 
