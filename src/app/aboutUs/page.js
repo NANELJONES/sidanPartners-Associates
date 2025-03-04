@@ -28,6 +28,7 @@ const Page = () => {
 
 
 
+
   const Tangent_div = () => {
     const active_height = [
       { height: "100%" },
@@ -123,9 +124,12 @@ const Page = () => {
     };
   
     return (
-      <div className="w-full hover:cursor-pointer  ">
+      <div className="w-full hover:cursor-pointer hover:bg-  ">
         {what_sets_us_apart.map((item, index) => (
-          <div key={index} className="border-b-2 border-primary_color">
+          <AnimateDown>
+
+       
+          <div key={index} className="border-b-2 hover:bg-text-primary_color  border-primary_color">
             <div
               className="w-full flex justify-between items-center p-4 text-left  transition duration-300"
               onClick={() => toggleAccordion(index)}
@@ -144,6 +148,7 @@ const Page = () => {
               </div>
             )}
           </div>
+          </AnimateDown>
         ))}
       </div>
     );
@@ -197,7 +202,7 @@ const Page = () => {
   };
 
   useEffect(() => {
-    // fetchTeam();
+     fetchTeam();
   }, []);
 
   const [values, set_values] = useState([
@@ -228,10 +233,12 @@ const Page = () => {
 
   return (
     <div className="w-full bg-secondary_color py-8">
-      <div className="   transition ease-in-out duration-600 p-4 mx-auto max-w-[1500px] md:py-20  flex flex-col gap-[3em]   relative  ">
+      <div className=" relative  transition ease-in-out duration-600 p-4 mx-auto max-w-[1500px] md:py-20  flex flex-col gap-[3em]   relative  ">
         {/* Hero Section */}
         <div className="flex flex-col gap-2    relative border-primary_color h-auto md:h-[50vw] md:max-h-[600px] max-h-[ ">
-        <AnimateDown>  <h1 className="text-[5em] lg:text-[10em] text-left ">About Us</h1></AnimateDown>
+        <AnimateDown>  <h1 className="text-[5em] lg:text-[10em]  text-left z-[3]   font-primary_font_bold ">About Us</h1></AnimateDown>
+        
+        
           <div className="flex w-full h-[100%] items-start gap-2">
             {/* left side */}
             <div className=" md:w-[50%]  h-[100%] flex flex-col gap-[1em] md:gap-[0px] md:justify-between ">
@@ -275,7 +282,7 @@ const Page = () => {
                 playsInline
                 muted
                loop
-                className=" w-full md:absolute md:bottom-0 md:right-0  max-w-[70vw] md:max-w-[450px] lg:max-w-[600px] md:w-[50%]  object-contain"
+                className=" w-full  md:absolute md:bottom-0 md:right-0  max-w-[70vw] md:max-w-[450px] lg:max-w-[600px] md:w-[50%]  object-contain"
               />
             </div>
           </div>
@@ -305,7 +312,7 @@ const Page = () => {
           <div className=" md:w-1/2  ">
             <div className="bg-primary_color p-[2em] flex flex-col gap-[3em] md:gap-[5em] py-[5em]">
          <div className="flex flex-col gap-[1em]">
-         <h3 className="text-text_color md:hidden">Who We Are</h3>
+         <h3 className="text-text_color font-primary_font_medium md:hidden">Who We Are</h3>
               <p className="columns-2 md:columns-1 lg:columns-2 text-text_color">
                 SIDAN is a Ghana-based design-to-construction company,
                 comprising a team of expert, skilled, and solution-oriented
@@ -325,8 +332,8 @@ const Page = () => {
               ></img>
 
               <div className="flex flex-col gap-[1em]">
-                <h3 className="text-text_color">Our Mission</h3>
-                <p className="text-text_color">
+                <h3 className="font-primary_font_medium text-text_color">Our Mission</h3>
+                <p className=" text-text_color">
                   To provide the best design-to-construction experience
                   globally, delivering exceptional quality, functionality, and
                   comfort.
@@ -334,7 +341,7 @@ const Page = () => {
               </div>
 
               <div className="flex flex-col gap-[1em]">
-                <h3 className="text-text_color ">Our Vision</h3>
+                <h3 className="font-primary_font_medium text-text_color ">Our Vision</h3>
                 <p className="text-text_color">
                   To provide the best design-to-construction experience
                   globally, delivering exceptional quality, functionality, and
@@ -346,30 +353,36 @@ const Page = () => {
             <div className=" flex flex-col gap-[2em] py-[5em] items-center justify-center ">
               <img
                 src="/our values image.svg"
-                className="w-full max-w-[200px] object-cover"
+                className="self-end   w-full max-w-[250px] md:max-w-[300px]  md:max-w-[200px] object-cover"
               ></img>
-
+   <h2 className="text-primary_color self-start md:hidden font-primary_font_medium text-left">Core Values</h2>
               {values.map((value, index) => (
+
+                <AnimateDown>
                 <div
                   key={index}
                   className="flex flex-col items-start w-full gap-[1em]"
                 >
+
+
                   <div className="flex gap-[1em] ">
                     <span className="text-secondary_color bg-primary_color text-[1.3em] rounded-md p-[0.5em]">
                       {value.icons}
                     </span>
-                    <h3 className="text-primary_color ">{value.title}</h3>
+                    <h3 className="hidden md:block text-primary_color ">{value.title}</h3>
+                    <h4 className="md:hidden text-primary_color ">{value.title}</h4>
                   </div>
 
                   <p className="text-primary_color">{value.description}</p>
                 </div>
+                </AnimateDown>
               ))}
             </div>
           </div>
         </div>
 
         {/* The Sidan Advantage */}
-        <div className="bg-primary_color overflow-hidden items-center min-h-[300px]  md:min-h-[80vh] gap-[1em] md:max-h-[700px]  flex flex-col md:flex-row">
+        <div className="bg-primary_color overflow-hidden max-h-[700px] items-center min-h-[300px]  md:min-h-[80vh] gap-[1em] md:max-h-[700px]  flex flex-col md:flex-row">
          <div className=" md:hidden w-full h-[30vh]"> 
 
           <Tangent_div />
@@ -379,9 +392,9 @@ const Page = () => {
             <h3 className="text-primary_color_light">Why us?</h3>
 
             <h3 className="text-primary_color_light font-thin">
-              Choose Us Means Choosing the <br/>
+              Choosing Us Means Choosing the <br/>
             </h3>
-            <h1 className="border-b-[0.3em]   md:text-[4em] py-[0.1em] text-primary_color_light border-primary_color_light">
+            <h1 className="border-b-[0.3em]  font-primary_font_medium  md:text-[4em] py-[0.1em] text-primary_color_light border-primary_color_light">
               Sidan Advantage
             </h1>
            
@@ -407,22 +420,33 @@ const Page = () => {
         {/* What Sets Us Apart */}
         <div className="flex flex-col gap-[2em] md:p-[2em]">
 
-          <h2 className="text-primary_color md:text-[4em]">What sets us "A-part"?</h2>
+          <h2 className="text-primary_color md:text-[4em] font-primary_font_medium">What sets us "A-part"?</h2>
           <UniqueAccordion />
         </div>
 
         {/* Outro */}
-        <div className="flex flex-col py-[2em] max-w-[800px] mx-auto items-center gap-[1em] md:p-[2em]">
+        <div className="flex flex-col py-[1em] max-w-[800px] mx-auto items-center gap-[1em] md:p-[2em]">
       <WordAnimation>   
          <h3 className="text-primary_color text-center ">
           Choosing the
           </h3></WordAnimation>
 
-<AnimateDown>
-          <h1 className="text-primary_color text-center ">
-          <span className="bg-primary_color text-secondary_color px-[0.5em] ">Sidan Advantage</span>   
+<WordAnimation>
+          <h1 className="hidden md:flex text-primary_color font-primary_font_medium text-center bg-primary_color text-secondary_color px-[0.5em] ">
+         Sidan Advantage
           </h1>
-          </AnimateDown>
+          </WordAnimation>
+
+
+          <WordAnimation>
+          <h3 className="md:hidden text-primary_color font-primary_font_medium text-center bg-primary_color text-secondary_color px-[0.5em] ">
+         Sidan Advantage
+          </h3>
+          </WordAnimation>
+
+
+
+
 <WordAnimation>
           <h3 className="hidden md:block text-primary_color text-center ">
  gets you a thorough design, a precise budget that saves you
@@ -467,7 +491,7 @@ const Page = () => {
          <div  id="teammates" className="flex flex-col  md:flex-row gap-[1em] items-start">
     <div className="flex flex-col gap-[1.5em] md:w-1/2  md:sticky md:top-20">
   
-  <AnimateDown> <h1>Meet our <br/> dedicated Experts</h1></AnimateDown> 
+  <AnimateDown> <h1 className="font-primary_font_medium md:text-[4em]">Meet our <br/> dedicated Experts</h1></AnimateDown> 
                 
                 <h3>Behind Every Great Build Is a Great Team</h3>
                 {/* <h6>{`Choosing the 'Sidan Advantage' gets you a thorough design, a precise budget that saves you
@@ -476,7 +500,7 @@ money and a seamlessly coordinated schedule, ensuring excellence at every step.`
     </div>
 
                 <div className="flex items-center justify-center md:w-1/2 md:justify-start   gap-[1em] 2xl:gap-[3em] w-full  flex-wrap ">
-              {teamMate.map((each_team, index) => {
+              {team.map((each_team, index) => {
                 return (
                   <div
                     key={index}

@@ -1,8 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Button3 } from "./Buttons";
+import { Button2, Button3 } from "./Buttons";
 import { motion } from "framer-motion";
+import { TextAnimation } from "./TextsAnimations";
+import { Button1 } from "./Buttons";
+import { IoArrowDownCircleOutline } from "react-icons/io5";
 
+import Link from "next/link";
 const LookingFor = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const lookingFor = [
@@ -32,14 +36,14 @@ const LookingFor = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col justify-between gap-[3em] md:gap-4 bg-[#20496C]/60 bg_blur p-10 md:p-20 h-auto">
+    <div className="transition-all duration-600 max-h-[700px] relative flex flex-col justify-between gap-[3em] md:gap-4 bg-[#20496C]/60 bg_blur px-4 py-10 md:p-20 h-auto">
       {/* Background Image Section */}
       <motion.div
         key={activeIndex}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="self-start md:self-end s h-[200px] w-full relative"
+        className="md:self-end     h-[200px] md:h-[30em]   w-full relative"
       >
         <div className="absolute top-5 right-5 w-fit h-auto p-[1em]">
           {/* Top Line */}
@@ -66,7 +70,7 @@ const LookingFor = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="w-full h-[100%] max-w-[200px] h-[200px] max-h-[250px] object-cover"
+            className="w-full h-[100%] max-w-[200px] h-[200px] max-h-[250px]  lg:max-w-[400px] lg:w-[30em] lg:h-[30em] object-cover"
           />
 
           {/* Bottom Line */}
@@ -89,7 +93,7 @@ const LookingFor = () => {
 
       {/* Text & Content Section */}
       <div className="mt-[2em] relative self-start flex flex-col gap-[1em] w-full">
-        <h5 className="text-secondary_color">So, if you are looking for</h5>
+        <h4 className="text-secondary_color">So, if you are looking for</h4>
 
         {/* Animated Title & Icon */}
         <motion.div
@@ -102,22 +106,40 @@ const LookingFor = () => {
           <img
             src={lookingFor[activeIndex].icon}
             alt={lookingFor[activeIndex].title}
-            className="w-[30px] h-[30px] object-cover 
+            className="w-[2em] h-[2em]  object-cover 
             filter drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] 
             transition-all duration-500 ease-in-out"
           />
-          <h3 className="text-secondary_color w-full font-[300] text-[2.5em] 2xl:text-[6em]">
+
+<TextAnimation>
+          <h1 className="hidden md:block text-secondary_color w-full large_text  font-primary_font_medium ">
             {lookingFor[activeIndex].title}
-          </h3>
+          </h1>
+
+          </TextAnimation>
+
+          <TextAnimation>
+          <h2 className=" md:hidden text-secondary_color w-full   font-primary_font_medium ">
+            {lookingFor[activeIndex].title}
+          </h2>
+
+          </TextAnimation>
+
+
+
         </motion.div>
 
         <h5 className="text-secondary_color font-[300]">
           for your dream project, then you've come to the right place
         </h5>
-        <Button3 title="Get in touch" link_address="/" />
-
+        <Link href={"/contactUs"}>
+              <button className="text-regular_text py-2  flex items-center gap-4 bg-none bg-transparent">
+              <h6 className="text-secondary_color">   Get In Touch </h6>
+                <IoArrowDownCircleOutline className="text-[2em] rotate-[-90deg]"></IoArrowDownCircleOutline>
+              </button>
+            </Link>
         {/* Navigation Buttons */}
-        <div className="flex flex-col vertical_centering gap-2 mt-4">
+        {/* <div className="flex flex-col vertical_centering gap-2 mt-4">
           {lookingFor.map((_, index) => (
             <button
               key={index}
@@ -127,7 +149,9 @@ const LookingFor = () => {
               }`}
             />
           ))}
-        </div>
+        </div> */}
+
+
       </div>
     </div>
   );

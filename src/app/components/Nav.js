@@ -16,7 +16,7 @@ const Nav = () => {
     { nav_name: "Home", nav_icon: "./menu.svg", nav_link: "/" },
     { nav_name: "Services", nav_icon: "./menu.svg", nav_link: "/services" },
    
-    { nav_name: "Resources", nav_icon: "./menu.svg", nav_link: "/", sub_menu:[
+    { nav_name: "Resources", nav_icon: "./menu.svg",  sub_menu:[
       {"sub_link_name":"Portfolio", "sub_link_link":"/projects"  },
       {"sub_link_name":"Blog and Updates", "sub_link_link":"/blog"  },
 
@@ -79,7 +79,7 @@ justify-around shadow-md bg-primary_color`}
         <div className="flex flex-col md:flex-row gap-4  h-auto items-start justify-start md:items-center">
           {nav_options.map((each_value) => (
             <div key={each_value.nav_name} className="relative  " onMouseEnter={()=>{each_value?.sub_menu ? set_sub_menu( each_value.nav_name) :set_sub_menu ("") }}  onMouseLeave={()=>{ set_sub_menu ("") }}  > 
-                <Link href={each_value.nav_link} >
+             {each_value?.nav_link ?    <Link href={each_value.nav_link} >
              <p 
               onClick={()=>{ set_show_nav(false)}}
              
@@ -87,7 +87,15 @@ justify-around shadow-md bg-primary_color`}
 
                 {each_value.nav_name}
               </p>
-            </Link>  
+            </Link>  :   
+             <p 
+              
+             
+             className="text-white  text-left md:hover:text-[1.3em] md:hover:font-semibold md:hover:text-primary_color_light transition-all duration-500 md:text-center text-[1.5em] md:text-[0.8em]  cursor-pointer">
+
+                {each_value.nav_name}
+              </p>
+          }
 
             {each_value?.sub_menu && sub_menu ===  each_value.nav_name  ? <div className="px-10  md:absolute  md:shadow-xl md:rounded-sm md:top-[2em] md:bg-primary_color  md:w-[15em] md:h-[14em] flex flex-col justify-around items-start px-4   " >
               {each_value?.sub_menu.map((each_sublink, index)=> {

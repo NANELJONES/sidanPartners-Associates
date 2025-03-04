@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef, useCallback } from "react";
-import { motion, useAnimation , useScroll} from "framer-motion";
+import { motion, useAnimation, useScroll } from "framer-motion";
 import { getTestimonials } from "../api/queries";
 import { AllLines } from "../components/AllLines";
 import Layout1 from "../layout/Layout1";
@@ -14,13 +14,10 @@ const Page = () => {
     pageInfo: { hasNextPage: true, endCursor: null },
     isLoading: false,
     error: null,
-
-    
   });
 
-  const parent_div =  useRef(null)
-  const {scrollYProgress}= useScroll()
-
+  const parent_div = useRef(null);
+  const { scrollYProgress } = useScroll();
 
   const [expandedTestimonial, setExpandedTestimonial] = useState(null);
   const controls = useAnimation();
@@ -35,7 +32,10 @@ const Page = () => {
     }));
 
     try {
-      const { data, pageInfo } = await getTestimonials(10, testimonials.pageInfo.endCursor);
+      const { data, pageInfo } = await getTestimonials(
+        10,
+        testimonials.pageInfo.endCursor
+      );
       setTestimonials((prev) => ({
         ...prev,
         data: [...prev.data, ...data],
@@ -50,17 +50,24 @@ const Page = () => {
       setTestimonials((prev) => ({
         ...prev,
         isLoading: false,
-        error: "Failed to load testimonials. Please try again later."
+        error: "Failed to load testimonials. Please try again later.",
       }));
     }
-  }, [testimonials.isLoading, testimonials.pageInfo.hasNextPage, testimonials.pageInfo.endCursor]);
+  }, [
+    testimonials.isLoading,
+    testimonials.pageInfo.hasNextPage,
+    testimonials.pageInfo.endCursor,
+  ]);
 
   useEffect(() => {
     fetchTestimonials();
   }, []);
 
   const handleScroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !testimonials.isLoading) {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 &&
+      !testimonials.isLoading
+    ) {
       fetchTestimonials();
     }
   };
@@ -94,8 +101,8 @@ const Page = () => {
           <div className="flex flex-col gap-[3em] md:flex-row">
             <div className="w-full layout_padding flex flex-col md:w-1/2 relative">
               <div className="md:sticky top-20 flex flex-col gap-[2em]">
-                <h2 className="text-primary_color_light">
-                  Hear from Those Who <br /> Trust Us!
+                <h2 className="text-primary_color_light font-primary_font_medium">
+                  Hear from Those Who Trust Us!
                 </h2>
                 <AnimateDown>
                   <img
@@ -108,27 +115,31 @@ const Page = () => {
                   <span className="flex items-center w-full gap-2">
                     <IoArrowDownCircleOutline className="text-primary_color_light rotate-[-90deg] text-[3em] md:text-[6em]" />
                     <h5 className="text-primary_color_light">
-                      "Don’t just take our word for it – hear from our clients! Discover why
-                      businesses and homeowners trust Sidan Associates for their
-                      design-to-construction needs."
+                      "Don’t just take our word for it – hear from our clients!
+                      Discover why businesses and homeowners trust Sidan
+                      Associates for their design-to-construction needs."
                     </h5>
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="relative z-10 w-full md:w-1/2 gap-[1em] p-2">
-            <div className="bg-primary_color p-4 shadow-lg   md:shadow-none md:bg-secondary_color sticky top-10 z-[2] py-4">
-            <h1 className="text-[4em] md:text-[6em] text-secondary_color md:text-primary_color">Reviews</h1>
-            <p className="text-secondary_color md:text-primary_color" >Total: {testimonials.data.length}</p>
-
-            </div>
-<br/>
-              <div   className="w-full relative border  ">
-            
-                {testimonials.error && <p className="text-red-500">{testimonials.error}</p>}
+            <div className="relative bg-secondary_color z-10 w-full md:w-1/2 gap-[1em] p-2">
+              <div className="bg-primary_color p-4 shadow-lg   md:shadow-none md:bg-secondary_color md:sticky md:top-10 z-[2] py-4">
+                <h1 className="text-[4em] md:text-[6em] text-secondary_color md:text-primary_color font-primary_font_medium">
+                  Reviews
+                </h1>
+                <p className="text-secondary_color md:text-primary_color">
+                  Total: {testimonials.data.length}
+                </p>
+              </div>
+              <br />
+              <div className="w-full relative border  ">
+                {testimonials.error && (
+                  <p className="text-red-500">{testimonials.error}</p>
+                )}
                 <div className=" scroll-smooth ">
-                {/* <motion.div
+                  {/* <motion.div
                     className="absolute top-0 left-0 H w-2 bg-primary_color"
                   
 
@@ -138,36 +149,55 @@ const Page = () => {
                   {testimonials.data.map((each_client, index) => (
                     <div
                       key={index}
-                      className={`border-t-4   bg-primary_color h-auto  items-start shadow:md border-secondary_color justify-start p-10 max-w-[600px] flex flex-col transition-all duration-300 ease-in-out ${
-                        expandedTestimonial === index ? "h-auto" : "h-[30em] max-h-[600px]"
+                      className={`border-t-4    h-auto  items-start shadow:md border-primary_color justify-start p-4 md:p-10 max-w-[600px] flex flex-col transition-all duration-300 ease-in-out ${
+                        expandedTestimonial === index
+                          ? "h-auto"
+                          : "h-[30em] max-h-[600px]"
                       }`}
                       onClick={() => toggleTestimonial(index)}
                     >
-                      <h6 className="text-primary_color_light">
+                      <p className=" self-end text-primary_color text-right">
+                        Satisfaction Score
+                      </p>
+                      <h2 className="self-end text-primary_color text-right">
+                        {each_client?.node?.score}
+                      </h2>
+
+                      <h6 className="text-primary_color">
                         <strong>{each_client?.node?.personName}</strong>
                         <br />
-                        <p className="text-primary_color_light">{each_client?.node?.personPosition}</p>
+                        <p className="text-primary_color">
+                          {each_client?.node?.personPosition}
+                        </p>
                       </h6>
-                      <p className="text-primary_color_light border-t p-2">
+                      <p className="text-primary_color border-primary_color border-t p-2">
                         {expandedTestimonial === index
                           ? each_client.node?.testimony
                           : getExcerpt(each_client.node?.testimony)}
                       </p>
                       <button
-                        className="text-primary_color_light mt-2 bg-none bg-transparent rounded-none border-0 p-1 border border-b-2"
+                        className="text-primary_color mt-2 bg-none bg-transparent rounded-none border-0 p-1 border border-b-2 border-primary_color"
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleTestimonial(index);
                         }}
                       >
-                        {expandedTestimonial === index ? "Show Less" : "Show More"}
+                        {expandedTestimonial === index
+                          ? "Show Less"
+                          : "Show More"}
                       </button>
                     </div>
                   ))}
-                  {testimonials.isLoading && <p className="text-primary_color_light">Loading more testimonials...</p>}
+                  {testimonials.isLoading && (
+                    <p className="text-primary_color_light">
+                      Loading more testimonials...
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
       </Layout1>

@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+fontFamily:{
+primary_font_bold:["BoldPrimaryFont"],
+primary_font_medium:["MediumPrimaryFont"]
+},
+
       colors: {
         main_bg: "var(--background)",
         foreground: "var(--foreground)",
@@ -20,6 +26,7 @@ module.exports = {
         
         regular_text:"rgba(256,256,256,1)",
       },
+
       backgroundImage: {
         bg_gradient:"linear-gradient(90deg, rgba(99, 104, 167, 0.8) 50%, rgba(186, 186, 186, 0.6) 130%)",
         second_gradient:"linear-gradient(90deg, rgba(14, 18, 136, 0.3) 50%, rgba(99, 104, 167, 0.6) 130%)",

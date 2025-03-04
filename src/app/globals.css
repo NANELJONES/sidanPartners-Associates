@@ -14,6 +14,28 @@
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 }
+
+@font-face {
+  font-family: "MediumPrimaryFont";
+  src: url("./fonts/RockfordSans-Medium.woff2") format("woff2"),
+  url("./fonts/RockfordSans-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+
+}
+
+
+@font-face {
+  font-family: "BoldPrimaryFont";
+  src: url("./fonts/RockfordSans-Bold.woff2") format("woff2"),
+  url("./fonts/RockfordSans-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+
+}
+
+
+
 }
 
 .brick{
@@ -35,7 +57,9 @@
   @apply text-[1em] cursor-pointer font-[300] md:text-[0.6em] lg:text-[0.8em]  2xl:text-[15px];
 }
 
-
+.main_header_font{
+  @apply text-[5em] lg:text-[8em]   font-primary_font_bold text-left
+}
 .large_text{
 
  @apply md:text-[5em]  cursor-pointer;
@@ -335,14 +359,14 @@ gap:  3px;
 
 @layer base {
   button{ 
-    @apply text-[0.8em] md:text-[0.8em]
+    @apply text-[0.8em] 
   }
  
   p, h1, h2, h3, h4, h5, h6, pre {
     @apply cursor-pointer text-primary_color;
   }
   
-  p {
+  p, label, input {
     @apply text-[0.8em] md:text-[0.9em] duration-500;
   }
   
@@ -386,7 +410,7 @@ gap:  3px;
   
   
   button{
-    @apply rounded-full bg-tertiary_color p-4 border-2
+    @apply rounded-full   bg-transparent py-4 px-2 border-2
   }
 
 .layout_padding{

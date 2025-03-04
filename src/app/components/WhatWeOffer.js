@@ -37,15 +37,15 @@ const WhatWeOffer = () => {
   ];
 
   return (
-    <div className="relative bg-primary_color-80 bg_blur min-h-screen flex flex-col py-10 md:py-20 gap-10 lg:gap-20 w-full p-10">
+    <div className="relative bg-primary_color-80 bg_blur min-h-screen flex flex-col py-10 md:py-20 gap-10 lg:gap-20 w-full ">
     <TextAnimation>
-    <h1 className="text-secondary_color font-Poppins  bg-primary_color   sticky top-10 md:top-[100px] z-10  text-4xl md:text-[6em]">
+    <h1 className="text-secondary_color  leading-[1em] font-Poppins  bg-primary_color  font-primary_font_medium sticky top-10 md:top-[100px] z-10  text-text_color text-4xl md:text-[4em] lg:text-[6em]">
         What We Offer
       </h1>
     </TextAnimation>
 
       <div className="relative w-full  min-h-[200vh] " ref={parentRef}>
-        <div className="sticky top-20 md:top-40  w-full overflow-hidden">
+        <div className="sticky top-20 md:top-60  w-full overflow-hidden">
           <motion.div ref={scrollRef} style={{ x }} className="flex  items-center">
             {services.map((service, index) =>
               service.name === "Line" ? (
@@ -81,7 +81,7 @@ const WhatWeOffer = () => {
                     {service.icon && (
                       <img src={service.icon} className="w-8 bg-primary_color  shadow-md rounded-md p-2 h-8 md:w-12 md:h-12" alt={service.name} />
                     )}
-                    <h2 className="text-secondary_color   leading-tight ">
+                    <h2 className="text-secondary_color text-text_color font-bold   leading-tight ">
                       {service.name}
                     </h2>
                   </div>
@@ -108,7 +108,7 @@ const WhatWeOffer = () => {
                                {/* Name and Serice  on small devices*/}
              <div className="flex md:hidden  self-start items-senter w-[70%] gap-4">
                     {service.icon && (
-                      <img src={service.icon} className="w-8 bg-secondary_color rounded-md p-2 h-8 md:w-12 md:h-12" alt={service.name} />
+                      <img src={service.icon} className="w-[3em] primary_color shadow-md rounded-md p-2 h-[3em] " alt={service.name} />
                     )}
                     <h3 className="text-secondary_color   leading-tight ">
                       {service.name}

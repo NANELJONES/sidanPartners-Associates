@@ -5,12 +5,14 @@ import { HeadersCollection7 } from "../components/AllHeaders/HeadersCollection";
 import { IoArrowDownCircleOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import AnimateUp from "../components/AnimateUp";
+import { TextAnimation } from "../components/TextsAnimations";
 import Link from "next/link";
 import Image from "next/image";
 import { AllLines } from "../components/AllLines";
 import { TopHorizontal, LeftVertical,RightVertical, BottomHorizontal } from "../components/AllLines";
 import TiltComponent from "../components/Tilt";
-import { TextAnimation } from "../components/TextsAnimations";
+
+import HowValues from "../components/HowValues";
 const Page = () => {
 
   const services = [
@@ -59,9 +61,12 @@ const Page = () => {
             {/* Header Intro Text */}
           <div className="flex flex-col gap-2  md:flex-row py-2    w-full  items-center justify-between    relative border-primary_color h-auto ">
             <div className={`w-full self-start md:w-2/3 "w-full self-start`}>
-              <h1 className="text-[5em] lg:text-[6em]  text-left ">
+            <TextAnimation>
+              <h1 className="main_header_font ">
                 Our Services
               </h1>
+              </TextAnimation>
+              <br/>
 
               <div
                 className={` h-[100%] w-full lg:w-full flex flex-col gap-[1em] md:gap-[0px] md:justify-between `}
@@ -135,36 +140,23 @@ const Page = () => {
 
 
             {/* this is the other side */}
-            <div className="relative w-[80%] circle_dot flex flex-col gap-[1em] md:gap-[3em] md:w-1/2 ">
-            <h2 className=" ">Here's How:</h2>
+            <div className="relative w-[80%] circle_dot flex flex-col gap-[1em] md:gap-[2em] md:w-1/2 ">
+            <h2 className=" font-primary_font_medium ">Here's How:</h2>
            <motion.div
          initial={{ height: "0px" }}
          whileInView={{height:"100%"}} // Use vh for full screen height
          transition={{ duration: 2, ease: "easeInOut" }} // Smooth animation
            
            className="absolute  w-[1px] top-0 left-[-20px]  h-full bg-tertiary_color"></motion.div>
+
+           <HowValues title={"Our design services allow us to blend creativity and functionality to match your needs."}></HowValues>
            
+           <HowValues title={"Is your project a residential one? Commercial? or industrial? Whatever the need is, we deliver top-tier construction services tailored to your requirements."}></HowValues>
            
-           <AnimateUp>
-            <h6 className=" p-2">Our design services allow us to blend creativity and functionality to match your needs.
-            </h6>
-            </AnimateUp>
+           <HowValues title={"As your Project Managers, we handle every detail—from budgeting to timelines—ensuring a seamless and stress-free experience."}></HowValues>
+           
 
-<AnimateUp>
-            <h6 className=" p-2">Is your project a residential one? Commercial? or industrial? Whatever the need is, we
-deliver top-tier
-construction services tailored to your requirements.
-
-            </h6>
-            </AnimateUp>
-
-
-
-<AnimateUp>
-            <h6 className=" p-2">As your Project Managers, we handle every detail—from budgeting to
-            timelines—ensuring a seamless and stress-free experience.
-            </h6>
-            </AnimateUp>
+      
 
             </div>
 

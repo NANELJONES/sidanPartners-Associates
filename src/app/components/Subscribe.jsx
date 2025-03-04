@@ -35,19 +35,19 @@ const Subscribe = () => {
   };
 
   return (
-    <div className='py-[3em] border-t-2 border-primary_color border-b-2'>
-      <h2>Subscribe <br/>
-        to our newsletter</h2>
+    <div className='py-[1em] border-t-2 border-primary_color border-b-2'>
+      <h4 className='font-primary_font_medium md:w-2/3 lg:w-1/3'>
+      Get exclusive insights, tips and foolproof guides straight in your inbox</h4>
       <br/>
       <form onSubmit={handleSubmit} className='grid gap-[1em] md:grid-cols-3 gap-2'>
         <div className='w-full'>
-          <label htmlFor="name" className='text-primary_color'>Name</label> <br />
+          <label htmlFor="name" className='text-primary_color text-[0.8em] md:text-[0.9em]'>Name</label> <br />
           <input 
             type="text" 
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className='w-full text-sm bg-transparent border-2 border-primary_color bg-none text-primary_color p-[1em]' 
+            className='w-full  bg-transparent border-b-2 border-b-primary_color bg-none text-primary_color p-[1em]' 
             placeholder='Enter your Name' 
           />
         </div>
@@ -59,7 +59,7 @@ const Subscribe = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className='w-full text-sm bg-transparent border-2 border-primary_color bg-none text-primary_color p-[1em]' 
+            className='w-full text-sm bg-transparent border-b-2 border-b-primary_color bg-none text-primary_color p-[1em]' 
             placeholder='Enter your Email' 
           />
         </div>

@@ -369,6 +369,7 @@ export const getTestimonials = async (first = 10, after = null) => {
             personName
             personPosition
             testimony
+            score
             personImage {
               url
             }

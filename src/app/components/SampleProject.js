@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { sample_projects } from "../Data/Data";
 import { IoArrowDownCircleOutline } from "react-icons/io5";
+import { TextAnimation } from "./TextsAnimations";
 
 const SampleProject = () => {
   const parent_div = useRef(null);
@@ -31,10 +32,10 @@ const SampleProject = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 2 }}
-      className="p-8 flex flex-col gap-4 w-full"
+      className="md:p-8 flex flex-col gap-4 w-full"
     >
       <div className="flex gap-2 items-end">
-        <h1 className="text-regular_text">Projects</h1>
+        <h1 className="large_text font-primary_font_bold text-secondary_color">Projects</h1>
       </div>
 
       <div className="w-full relative">

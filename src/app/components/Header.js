@@ -18,9 +18,9 @@ const Header = () => {
     whileInView={{ opacity: 1, y: 0,}}
     transition={{ duration: 2, delay:0.2 }}
                     className='w-full p-[2em]   '>
-                                 <AnimateUp>   <h4 className='text-secondary_color'>Welcome to</h4></AnimateUp>
+                                 <AnimateUp>   <h4 className='text-secondary_color font-primary_font_medium'>Welcome to</h4></AnimateUp>
                              
-                              <h1 className='text-secondary_color  md:text-[5em]'>Sidan Associates <br/>
+                              <h1 className='text-secondary_color  md:text-[5em] font-primary_font_bold'>Sidan Associates <br/>
                               & Partners</h1>
 
                              
@@ -37,10 +37,10 @@ const Header = () => {
                     initial={{ opacity: 0, y: 40, }}
     whileInView={{ opacity: 1, y: 0,}}
     transition={{ duration: 2, delay:0.2 }}
-                    className='w-full p-[2em]  md:w-1/2     '>
+                    className='w-full p-[2em]     '>
                               
                                 
-                                <h6 className='text-primary_color_light max-w-[250px]'>{'We are a renowned company that specializes in :'}</h6>
+                                {/* <h6 className='text-primary_color_light max-w-[250px]'>{'We are a renowned company that specializes in :'}</h6> */}
                            <DesignToConstructionVisualizer></DesignToConstructionVisualizer>
                            
                             <br/>
@@ -49,7 +49,7 @@ const Header = () => {
                                whileInView={{ opacity: 1, x: 0,}}
                                transition={{ duration: 2, delay:0.5 }}
                                
-                               className='flex min-w-[200px] p-2 md:w-1/3 lg:w-1/2 xl:w-1/3 justify-around items-center gap-2'>Get In Touch With Us  <img src="/circle_arrow.svg" className='w-[30px] h-[30px]'></img></motion.button></Link>
+                               className='flex min-w-[220px] md:hover:bg-primary_color  md:hover:px-2 md:hover:text-primary_color_light transition-all duration-600  max-w-[200px] p-2 md:w-1/3 lg:w-1/2 xl:w-1/3 justify-around items-center gap-2'>Get In Touch With Us  <img src="/circle_arrow.svg" className='w-[30px] h-[30px]'></img></motion.button></Link>
                     </motion.div>
 
                  
