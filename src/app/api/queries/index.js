@@ -16,16 +16,17 @@ export const getProjects = async (first = 5, after = null, projectCategory = "Al
       ) {
         edges {
           node {
-            projectDetails
+          
             projectExcerpt
             projectField
-            projectLocation
+            
+          
             projectCategory
             projectName
             projectStatus
             slug
             createdAt
-            startDate
+       
             projectImages {
               url
             }
@@ -44,7 +45,9 @@ export const getProjects = async (first = 5, after = null, projectCategory = "Al
     projectsConnection(first: $first, after: $after,orderBy: createdAt_DESC) {
       edges {
         node {
-          projectDetails
+          projectDetails{
+          raw
+          }
           projectExcerpt
           projectField
           projectLocation

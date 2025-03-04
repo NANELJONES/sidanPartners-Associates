@@ -13,7 +13,7 @@ const AbstractCube = () => {
         <div className="w-full relative h-[70vh] flex items-center justify-center">
           <Image
             alt="Loading..."
-            src="/Gal.png"
+            src="/3d/3D Img.png"
             className="w-full object-contain"
             fill={true}
           />
@@ -23,7 +23,7 @@ const AbstractCube = () => {
       {/* Spline 3D Scene */}
       <main className="h-full">
         <Spline
-          scene="https://prod.spline.design/KlHTYC7FnnUI3ghP/scene.splinecode"
+          scene="https://prod.spline.design/8cnhUzd3hjvnou38/scene.splinecode"
           onLoad={() => setIsLoading(false)} // Hide image when Spline loads
         />
       </main>

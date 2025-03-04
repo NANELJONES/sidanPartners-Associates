@@ -18,37 +18,37 @@ const Page = () => {
   const services = [
     {
       name: "Full-Scale Construction Services",
-      gif: ["/Services_Gif/0220.gif", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png"],
+      gif: ["/service icons/construction_imagery1.jpg","/service icons/construction_imagery2.jpg"],
       icon: "/service icons/construction_icon.svg",
     },
     {
       name: "Architectural Designs",
-      gif: ["/Services_Gif/0220.gif", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png"],
+      gif: ["/service icons/interior_imagery.jpg", "/service icons/interior_image1.jpg"], 
       icon: "/service icons/architectural_icon.svg",
     },
     {
       name: "Interior Design",
-      gif: ["/Services_Gif/0220.gif", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png"],
+      gif: ["/service icons/interior_imagery.jpg", "/service icons/interior_image1.jpg"], 
       icon: "/service icons/interior_design_icon.svg",
     },
     {
       name: "3D Visualization and Animation",
-      gif: ["/Services_Gif/0220.gif", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png"],
+      gif: ["/service icons/interior_imagery.jpg", "/service icons/interior_image1.jpg"], 
       icon: "/service icons/3d_visualization_icon.svg",
     },
     {
       name: "Project and Facility Management",
-      gif: ["/Services_Gif/0220.gif", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png"],
+      gif: ["/service icons/interior_imagery.jpg", "/service icons/interior_image1.jpg"], 
       icon: "/service icons/project_management_icon.svg",
     },
     {
       name: "Quantity Surveying",
-      gif: ["/Services_Gif/0220.gif", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png"],
+      gif: ["/service icons/interior_imagery.jpg", "/service icons/interior_image1.jpg"], 
       icon: "/service icons/quantity_surveying_icon.svg",
     },
     {
       name: "Virtual & Augmented Reality Content",
-      gif: ["/Services_Gif/0220.gif", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png", "/Gal.png"],
+      gif: ["/service icons/interior_imagery.jpg", "/service icons/interior_image1.jpg"], 
       icon: "/service icons/vr_ar_icon.svg",
     },
   ];

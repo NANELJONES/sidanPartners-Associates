@@ -13,7 +13,9 @@ export const getProjects = async ()=>{
     edges {
       node {
         projectExcerpt
-        projectDetails
+          projectDetails {
+          raw
+        }
         projectField
         projectLocation
         projectName
@@ -57,7 +59,9 @@ export const getSingleProject = async (slug) => {
         edges {
            node {
         projectExcerpt
-        projectDetails
+           projectDetails {
+          raw
+        }
         projectField
         projectLocation
         projectName

@@ -13,17 +13,17 @@ const LookingFor = () => {
     {
       title: "Innovative Designs",
       icon: "/service icons/innovative_design.svg",
-      image: "/Gal.png",
+      image: "/service icons/architectural_image.jpg",
     },
     {
       title: "Seamless Construction",
       icon: "/service icons/seamless_construction.svg",
-      image: "/man.jpg",
+    image: "/service icons/construction_imagery2.jpg",
     },
     {
       title: "Sustainable Measures",
       icon: "/service icons/sustainability.svg",
-      image: "/Who We Are.png",
+      image: "/service icons/quantity_surveying_imagery.jpg",
     },
   ];
 

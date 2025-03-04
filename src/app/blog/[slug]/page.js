@@ -12,6 +12,8 @@ import Comments from "@/app/components/Blog/Comments";
 import { GetSingleBlogPost, GetSimilarPosts } from "@/app/api/blog";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import FeaturePosts from "@/app/components/Blog/FeaturePosts";
+
+
 const Page = () => {
   const pathname = usePathname();
   const slug = pathname.split("/").pop();

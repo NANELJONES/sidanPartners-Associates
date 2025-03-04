@@ -29,17 +29,21 @@ const WhatWeOffer = () => {
   const x = useTransform(scrollYProgress, [0, 1], [0, -(scrollWidth - clientWidth)]);
 
   const services = [
-    { name: "Design-to-Construction Services", gif: ["/Services_Gif/0220.gif"], icon: "/service icons/construction_icon.svg" },
+    { name: "Design-to-Construction Services", 
+      gif: ["/service icons/construction_imagery1.jpg","/service icons/construction_imagery2.jpg"],
+       icon: "/service icons/construction_icon.svg" },
     { name: "Line" },
-    { name: "Tailored Construction Management", gif: ["/service icons/Main-Header.jpg"], icon: "/service icons/project_management_icon.svg" },
+    { name: "Tailored Construction Management", gif: ["/service icons/construction_imagery1.jpg","/service icons/quantity_surveying_imagery.jpg"], icon: "/service icons/project_management_icon.svg" },
     { name: "Line" },
-    { name: "Custom Architectural and Interior Solutions", gif: ["/Services_Gif/0220.gif"], icon: "/service icons/architectural_icon.svg" },
+    { name: "Custom Architectural and Interior Solutions",
+       gif: ["/service icons/interior_imagery.jpg", "/service icons/interior_image1.jpg"], 
+       icon: "/service icons/architectural_icon.svg" },
   ];
 
   return (
-    <div className="relative bg-primary_color-80 bg_blur min-h-screen flex flex-col py-10 md:py-20 gap-10 lg:gap-20 w-full ">
+    <div className="relative bg-primary_color-80 min-h-screen flex flex-col py-10 md:py-20 gap-10 lg:gap-20 w-full ">
     <TextAnimation>
-    <h1 className="text-secondary_color  leading-[1em] font-Poppins  bg-primary_color  font-primary_font_medium sticky top-10 md:top-[100px] z-10  text-text_color text-4xl md:text-[4em] lg:text-[6em]">
+    <h1 className="text-secondary_color  leading-[1em] font-Poppins   font-primary_font_medium    text-text_color md:text-[4em] lg:text-[6em]">
         What We Offer
       </h1>
     </TextAnimation>
@@ -74,7 +78,10 @@ const WhatWeOffer = () => {
                    initial={{x:0}}
                    whileInView={{x:-40}}
                    transition={{duration:2}}
-                   className="absolute top-0 right-10 md:relative top-0 right-0 self-start w-[20em] h-[15em] hex_box bg-secondary_color"></motion.div>
+                   className="absolute top-0 right-10 md:relative top-0 right-0 self-start w-[20em] h-[15em] hex_box bg-secondary_color">
+<img className="w-full h-full object-cover" src={service.gif[1]}></img>
+
+                   </motion.div>
            
              {/* Name and Serice on large devices */}
              <div className="flex hidden md:flex items-center md:w-3/4 gap-4">
@@ -110,7 +117,7 @@ const WhatWeOffer = () => {
                     {service.icon && (
                       <img src={service.icon} className="w-[3em] primary_color shadow-md rounded-md p-2 h-[3em] " alt={service.name} />
                     )}
-                    <h3 className="text-secondary_color   leading-tight ">
+                    <h3 className="text-text_color  leading-tight ">
                       {service.name}
                     </h3>
                   </div>

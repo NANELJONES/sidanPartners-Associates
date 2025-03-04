@@ -90,7 +90,13 @@ justify-around shadow-md bg-primary_color`}
             </Link>  :   
              <p 
               
-             
+             onClick={()=>{
+              if(sub_menu){
+                set_sub_menu("")
+              }else{
+                set_sub_menu(each_value.nav_name)
+              }
+             }}
              className="text-white  text-left md:hover:text-[1.3em] md:hover:font-semibold md:hover:text-primary_color_light transition-all duration-500 md:text-center text-[1.5em] md:text-[0.8em]  cursor-pointer">
 
                 {each_value.nav_name}

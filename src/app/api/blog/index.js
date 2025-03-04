@@ -287,7 +287,7 @@ export const getCategories = async () => {
 export const GetSingleBlogPost = async (slug) => {
   const query = gql`
   query GetSingleBlogPost($slug: String!) {
-    post(where: { slug: $slug },orderBy: createdAt_DESC) {
+    post(where: { slug: $slug }) {
       slug
       stage
       title
