@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useRef, useState, useLayoutEffect , useEffect, useCallback} from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { getProjects } from "../api/queries";
 import { sample_projects } from "../Data/Data";
+
 import { IoArrowDownCircleOutline } from "react-icons/io5";
 import { TextAnimation } from "./TextsAnimations";
 
@@ -24,6 +26,47 @@ const SampleProject = () => {
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
+
+    const [projects, setProjects] = useState({
+      data: [],
+      pageInfo: { hasNextPage: true, endCursor: null },
+      isLoading: false,
+    });
+  
+  
+  
+    const fetchProjects = useCallback(async (chosen_category) => {
+      // Reset projects when switching categories
+      setProjects({
+        data: [], // Clear previous projects
+        pageInfo: { hasNextPage: true, endCursor: null },
+        isLoading: true, // Show loading state
+      });
+  
+      try {
+        const { data, pageInfo } = await getProjects(5, null, chosen_category); // Reset pagination
+  
+        setProjects({
+          data, // Replace with new filtered projects
+          pageInfo,
+          isLoading: false,
+        });
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setProjects((prev) => ({
+          ...prev,
+          isLoading: false,
+        }));
+      }
+    }, []);
+
+
+
+useEffect(()=>{
+    fetchProjects("All")
+},[])
+
+
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -(parentWidth *2)]);
 
@@ -52,7 +95,7 @@ const SampleProject = () => {
           {/* Sticky Wrapper */}
           <div className="sticky top-0 w-full overflow-hidden">
             <motion.div style={{ x }} className="flex items-start min-w-[max-content]">
-              {sample_projects.slice(0, 5).map((each_project, index) => (
+              {projects.data.slice(0, 5).map((each_project, index) => (
                 <div className="md:p-10 w-[20em] shrink-0 md:w-1/2 px-4" key={index}>
                   <div className="relative w-full h-[60vw] max-h-[300px] md:h-[18em]">
                     <Image
