@@ -65,13 +65,15 @@ const Intro = () => {
   </div>
 
   <div className="flex relative flex-col md:flex-row items-start md:items-end justify-between">
-    <motion.img
+   <div className="hidden md:block md:w-1/2"></div>
+   
+    {/* <motion.img
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
       src="/Isometric.png"
       className="w-full max-w-[300px] md:w-2/3 lg:w-1/2"
-    />
+    /> */}
 
     <motion.h5
       initial={{ opacity: 0, y: -20 }}

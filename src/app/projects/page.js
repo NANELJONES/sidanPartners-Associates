@@ -77,17 +77,16 @@ const Page = () => {
   return (
     <div className="relative bg-secondary_color w-full">
       <Layout1>
-        <div className="flex flex-col gap-2  py-2 border-b-[10px] md:border-b-[15px] border-primary_color md:flex-row w-full  items-center justify-around    relative border-primary_color h-auto ">
+        <div className="flex flex-col gap-2  py-2 border-b-[10px] md:border-b-[15px] border-primary_color  w-full  items-start justify-around    relative border-primary_color h-auto ">
           <h1 className="text-[5em] lg:text-[8em] w-full text-left font-primary_font_bold ">
-            Projects
+            Portfolio
           </h1>
 
           <div className=" md:w-[50%]  h-[100%] flex flex-col gap-[1em] md:gap-[0px] md:justify-between ">
             <span className="flex items-center w-full  md:w gap-2">
-              <IoArrowDownCircleOutline className="text-primary_color rotate-[-45deg] text-[3em] md:text-[6em] " />
+              <IoArrowDownCircleOutline className="text-primary_color rotate-[-45deg] text-[3em]  " />
               <h5>
-                Gain insights from industry trends, eco-friendly innovations,
-                and expert tips on design and construction. with{" "}
+              Here are visions designed and constructed with excellence, not for us but for clients like you.
               </h5>
             </span>
           </div>

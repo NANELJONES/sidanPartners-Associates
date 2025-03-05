@@ -73,7 +73,9 @@ const WhatWeOffer = () => {
                  <div className="relative oct_box w-80 h-80 lg:w-96 lg:h-96">
                       <Image src={service.gif[0]} alt={service.name} fill className="object-cover" />
                     </div>
+
                    <div>
+                    
                    <motion.div
                    initial={{x:0}}
                    whileInView={{x:-40}}

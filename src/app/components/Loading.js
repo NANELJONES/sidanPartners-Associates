@@ -22,8 +22,9 @@ export default function Loading({ children }) {
     // Render the loading screen while elements are still loading
     return (
       <div className="fixed inset-0 bg-gray-900 flex items-center justify-center h-[100vh] w-full">
-        <h3 className="text-white">Page Loading</h3>
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500" >  </div>
+        <h3 className="text-primary_color_light">Sidan Page Loading</h3>
+
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary_color" >  </div>
       </div>
     );
   }

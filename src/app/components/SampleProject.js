@@ -35,18 +35,16 @@ const SampleProject = () => {
       className="md:p-8 flex flex-col gap-4 w-full"
     >
       <div className="flex gap-2 items-end">
-        <h1 className="large_text font-primary_font_bold text-secondary_color">Projects</h1>
+        <h1 className="large_text font-primary_font_bold text-secondary_color">Portfolio</h1>
       </div>
 
       <div className="w-full relative">
         <h3 className=" hidden md:block w-full text-text_color md:w-2/3">
-          With over a myriad of our projects, we have sampled a couple to
-          showcase our expertise for your reference.
+        Explore a selection of our projects, carefully curated to showcase our expertise for your reference.
         </h3>
 
         <h5 className="  md:hidden w-full text-text_color md:w-2/3">
-          With over a myriad of our projects, we have sampled a couple to
-          showcase our expertise for your reference.
+        Explore a selection of our projects, carefully curated to showcase our expertise for your reference.
         </h5>
         <br />
 

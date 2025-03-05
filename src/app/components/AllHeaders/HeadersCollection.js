@@ -174,7 +174,7 @@ const HeadersCollection7 = ({heading,  second_heading, sub_heading, text, source
   return (
     <div className="flex flex-col gap-2  md:flex-row py-2 border-b-[1em] border-primary_color  w-full  items-center justify-between    relative border-primary_color h-auto ">
 <div className={ `${source ? "w-full self-start md:w-1/2" : "w-full self-start"}`}>
-<h1 className="text-[5em] lg:text-[6em] w-[80%] text-left ">{heading}</h1>
+<h1 className=" font-primary_font_bold main_header_font text-left ">{heading}</h1>
 
 <div
 className={ ` h-[100%] flex flex-col gap-[1em] md:gap-[0px] md:justify-between ${source ? "md:w-full" : "md:w-1/2 "}`}
@@ -182,8 +182,8 @@ className={ ` h-[100%] flex flex-col gap-[1em] md:gap-[0px] md:justify-between $
 
 >
     <span className="flex items-center w-full  md:w gap-2">
-      <IoArrowDownCircleOutline className="text-primary_color rotate-[-45deg] text-[3em] md:text-[6em] " />
-      <h5>
+      <IoArrowDownCircleOutline className="text-primary_color rotate-[-45deg] text-[3em] " />
+      <h5 className='lg:text-3xl w-full'>
       {text}
 
       </h5>

@@ -33,9 +33,9 @@ const primary_text = Public_Sans({
 });
 
 export const metadata = {
-  title: "Sidan Associates and Partners - Leading Architects & Builders in Ghana",
+  title: "Sidan Associates and Partners",
   description:
-    "Sidan Associates and Partners is one of the best construction companies in Ghana, offering expert architectural design, sustainable building solutions, and real estate development. We specialize in luxury homes, commercial buildings, urban planning, and mixed-use developments in Ghana.",
+    "Sidan Associates and Partners is a leading design to construction company in Ghana, offering expert architectural design, sustainable building solutions, and real estate development. We specialize in luxury homes, industrial, commercial buildings, urban planning, and mixed-use developments in Ghana.",
   keywords: [
     
     "Architecture Ghana",
