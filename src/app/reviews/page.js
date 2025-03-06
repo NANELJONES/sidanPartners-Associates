@@ -115,9 +115,9 @@ const Page = () => {
                   <span className="flex items-center w-full gap-2">
                     <IoArrowDownCircleOutline className="text-primary_color_light rotate-[-90deg] text-[3em] md:text-[6em]" />
                     <h5 className="text-primary_color_light">
-                      "Don’t just take our word for it – hear from our clients!
+                      Don’t just take our word for it – hear from our clients!
                       Discover why businesses and homeowners trust Sidan
-                      Associates for their design-to-construction needs."
+                      Associates for their design-to-construction needs.
                     </h5>
                   </span>
                 </div>

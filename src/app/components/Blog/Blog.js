@@ -103,11 +103,11 @@ const Blog = () => {
           
           </Link>
           <span className="flex items-center gap-2">
-            <img
+         {/*<img
               src={each_blog?.node?.author?.picture?.url}
               className="w-full h-full max-w-[50px] rounded-full max-h-[50px]"
               alt="Author"
-            />
+            />*/}   
             <p className="italic ">by: {each_blog?.node?.author?.name}</p>
             <p className="italic ml-[2em] ">{GetDate(each_blog?.node?.createdAt)}</p>
           </span>

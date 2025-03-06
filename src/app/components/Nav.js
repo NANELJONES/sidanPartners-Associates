@@ -36,7 +36,7 @@ const Nav = () => {
     
     // ] },
   
-    { nav_name: "Reviews", nav_icon: "./menu.svg", nav_link: "/reviews" },
+    // { nav_name: "Reviews", nav_icon: "./menu.svg", nav_link: "/reviews" },
    
     { nav_name: "About Us", nav_icon: "./menu.svg", nav_link: "/aboutUs" },
      { nav_name: "Careers", nav_icon: "./menu.svg", nav_link: "/joinUs" },

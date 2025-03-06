@@ -511,7 +511,8 @@ money and a seamlessly coordinated schedule, ensuring excellence at every step.`
                         src={each_team?.node?.employeeImage?.url}
                         fill
                         unoptimized
-                        className="object-cover"
+                        className="object-cover object-[top]"
+                      
                       ></Image>
                     </div>
                   

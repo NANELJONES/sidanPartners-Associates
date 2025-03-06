@@ -115,25 +115,24 @@ export const getSingleProject = async (slug) => {
     query GetProjectBySlug($slug: String!) {
       projectsConnection(where: { slug: $slug }) {
         edges {
-          node {
-            clientName
-            projectDetails
-            projectExcerpt
-            projectField
-             projectCategory
-            projectLocation
-            projectName
-            projectStatus
-            slug
-             service {
-          serviceName
+           node {
+        projectExcerpt
+           projectDetails {
+          raw
         }
-            startDate
-            endDate
-            projectImages {
-              url
-            }
-          }
+        projectField
+        projectLocation
+        projectName
+        projectStatus
+        duration
+        slug
+        target
+        endDate
+        startDate
+        projectImages {
+          url
+        }
+      }
         }
       }
     }
@@ -147,7 +146,6 @@ export const getSingleProject = async (slug) => {
     return null;
   }
 };
-
 
 // getGallery
 // getGallery

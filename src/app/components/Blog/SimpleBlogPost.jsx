@@ -20,7 +20,7 @@ const SimpleBlogPost = ({blog_post}) => {
       <Link href={ `/blog/${blog_post?.node?.slug}`}>   <h6 className=''>{blog_post.node.title}</h6></Link>
         
         <div className='flex items-center gap-4 flex-wrap '>
-                          <img className='w-10 h-10 rounded-full '  src={blog_post?.node?.author?.picture?.url}></img>
+                          {/* <img className='w-10 h-10 rounded-full '  src={blog_post?.node?.author?.picture?.url}></img> */}
                     <p className=''>{blog_post?.node?.author?.name}</p>
                         
                     </div>
