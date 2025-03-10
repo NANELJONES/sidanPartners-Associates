@@ -22,7 +22,7 @@ const Footer = () => {
             Get In touch 
           </h1>
 
-          <div className="w-full h-[1px] bg-primary_color"></div>
+          <div className="w-full h-[4px] bg-primary_color"></div>
        
           <div className="flex flex-col gap-[1em]   md:flex-row items-start justify-between">
 {/* Contact Us */}
@@ -133,12 +133,12 @@ const Footer = () => {
 </div>
 
 
-          <p className="text-primary_color text-center mt-[3em]">
-            © 2024 Sidan Partners and Associates All rights reserved
-          </p>
-          <Link href={"https://kr8tos.vercel.app/"}>
+<p className="text-primary_color text-center mt-[3em]">
+  © {new Date().getFullYear()} Sidan Partners and Associates. All rights reserved.
+</p>
+          {/* <Link href={"https://kr8tos.vercel.app/"}>
             <p className="text-primary_color text-center">Developed by Kr8tos</p>
-          </Link>
+          </Link> */}
         </div>
       </Layout2>
     </div>

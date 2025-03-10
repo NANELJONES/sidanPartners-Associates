@@ -110,7 +110,7 @@ const Page = () => {
 
           {/* Visual Look */}
           <div
-            className=" services_div h-[60%]"
+            className=" hex_box h-[60%]"
             style={{
               backgroundImage: `url("/service icons/Main-Header.jpg")`,
               backgroundSize: "cover",

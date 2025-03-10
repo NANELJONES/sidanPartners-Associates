@@ -278,10 +278,10 @@ const Page = () => {
             <div className="w-full  hidden md:block items-center   md:w-[50%]  h-auto flex flex-col   justify-between ">
               <video
                 src="/Us/About Us Intro.mp4"
-                autoPlay
-                playsInline
                 muted
-               loop
+                autoPlay
+                loop
+                controls={false}
                 className=" w-full  md:absolute md:bottom-0 md:right-0  max-w-[70vw] md:max-w-[450px] lg:max-w-[600px] md:w-[50%]  object-contain"
               />
             </div>

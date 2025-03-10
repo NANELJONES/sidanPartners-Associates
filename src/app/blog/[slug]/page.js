@@ -104,12 +104,12 @@ const Page = () => {
         <div className="md:w-[70%] flex flex-col gap-4">
           <h2 className="md:w-[70%]">{post.title}</h2>
           <div className="flex items-center gap-4 flex-wrap">
-            <img
+            {/* <img
               className="w-10 h-10 object-cover border border-2 border-primary-color rounded-full"
               src={post.author?.picture?.url}
               alt={post.author?.name}
-            />
-            <p>{post.author?.name}</p>
+            /> */}
+            <p className="italic font-bold"> by {post.author?.name}</p>
             <p className="px-2 border-l-8 border-l-primary_color">
               Posted On: {dateReturner(post.createdAt)}
             </p>
