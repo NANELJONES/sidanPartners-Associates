@@ -17,14 +17,14 @@ const Footer = () => {
   return (
     <div className="w-full flex flex-col items-center justify-between mt-2 md:mt-[20px] gap-[2em] md:py-10 bg-secondary_color relative z-[2]">
       <Layout2>
-        <div className="flex flex-col gap-2">
+        <div className="flex gap-[1em] flex-col gap md:gap-2">
           <h1 className=" text-primary_color font-primary_font_bold md:text-[8em] w-full text-left">
             Get In touch 
           </h1>
 
           <div className="w-full h-[4px] bg-primary_color"></div>
        
-          <div className="flex flex-col gap-[1em]   md:flex-row items-start justify-between">
+          <div className="flex flex-col  gap-[3em] md:gap-[1em]   md:flex-row items-start justify-between">
 {/* Contact Us */}
           <div className=" gap-4 md:w-[30%]   md:flex self-start flex flex-col items-start ">
               <h2 className="text-primary_color font-primary_font_medium  text-left">Contact</h2>

@@ -121,6 +121,7 @@ export const getSingleProject = async (slug) => {
           raw
         }
         projectField
+        client
         projectLocation
         projectName
         projectStatus

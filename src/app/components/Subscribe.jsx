@@ -35,7 +35,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className='py-[1em] border-t-2 border-primary_color border-b-2'>
+    <div className='py-[1em] md:border-t-2 border-primary_color md:border-b-2'>
       <h4 className='font-primary_font_medium md:w-2/3 lg:w-1/3'>
       Get exclusive insights, tips and foolproof guides straight in your inbox</h4>
       <br/>

@@ -81,7 +81,7 @@ const Page = () => {
 
   return (
     <div className="bg-secondary_color">
-      <Layout1>
+      <Layout1 >
         {/* <AllLines></AllLines> */}
         <div className="max-h-[800px]  h-[100vh] min-h-[300px]">
           {/* Header Intro Text */}
@@ -92,19 +92,7 @@ const Page = () => {
               </TextAnimation>
               <br />
 
-              <div
-                className={` h-[100%] w-full lg:w-full flex flex-col gap-[1em] md:gap-[0px] md:justify-between `}
-              >
-                <span className="flex items-center w-full  md:w-[60%]  gap-2">
-                  <IoArrowDownCircleOutline className="text-primary_color rotate-[-45deg] text-[3em] ] " />
-                 <AnimateDown>
-                  <h5 className="lg:text-3xl w-full">
-                    Just Think About It - Your Vision, Brought to Life with Our
-                    Expertise!
-                  </h5>
-                  </AnimateDown>
-                </span>
-              </div>
+             
             </div>
           </div>
 
@@ -119,9 +107,22 @@ const Page = () => {
           ></div>
         </div>
 
+
+{/* this is the here is how */}
+
+                <span className="flex items-center w-full mt-[2em]  lg:w-[60%]  gap-2">
+                  <IoArrowDownCircleOutline className="text-primary_color hover:rotate-[-90deg] transition-all duration-600 rotate-[-45deg] text-[3em] ] " />
+                 <TextAnimation>
+                  <h3 className="md:text-[3em] w-full font-bold">
+                    Just Think About It - Your Vision, Brought to Life with Our
+                    Expertise!
+                  </h3>
+                  </TextAnimation>
+                </span>
+         
         {/* Here is how */}
 
-        <div className="normal_div gap-[2em] lg:gap-[4em] mt-[6em] md:mt-[1em]  md:py-10 items-center">
+        <div className="normal_div gap-[2em] lg:gap-[4em] mt-[3em]  md:mt-[1em]  md:py-10 items-center">
           <motion.div
             className="w-full md:w-1/2 self-end flex gap-[2em]"
             initial="hidden"

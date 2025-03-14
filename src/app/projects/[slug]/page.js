@@ -57,7 +57,9 @@ const Page = () => {
             <h6 className='text-text_color'>{project.projectField}</h6>
             <br/>
             <div className='flex hidden md:block flex-wrap items-start justify-end   gap-2 md:flex-col md:items-start md:justify-start justify-between'>
-
+            <p className='text-text_color'><strong>Client :</strong> <br/> {project.client} <br/> </p>
+            <br/>
+           
           
             <p className='text-text_color'><strong>Location :</strong> <br/> {project.projectLocation} <br/> </p>
 
@@ -93,6 +95,7 @@ const Page = () => {
 
 {/* <p className='text-text_color'> <strong>Client :</strong> <br/>  {project.clientName}</p> */}
 
+<p className='text-text_color'><strong>Client :</strong> <br/> {project.client} <br/> </p>
 
 <p className='text-text_color'><strong>Location :</strong> <br/> {project.projectLocation} <br/> </p>
 

@@ -20,7 +20,7 @@ const Nav = () => {
       {"sub_link_name":"Portfolio", "sub_link_link":"/projects"  },
       {"sub_link_name":"Blog and Updates", "sub_link_link":"/blog"  },
 
-      {"sub_link_name":"Brochure", "sub_link_link":"/projects"  },
+      {"sub_link_name":"Brochure", "sub_link_link":"/SIDAN BROCHURE 2024.pdf"  },
       
     
     
