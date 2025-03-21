@@ -343,9 +343,8 @@ const Page = () => {
               <div className="flex flex-col gap-[1em]">
                 <h3 className="font-primary_font_medium text-text_color ">Our Vision</h3>
                 <p className="text-text_color">
-                  To provide the best design-to-construction experience
-                  globally, delivering exceptional quality, functionality, and
-                  comfort.
+                To become a global leader in sustainability by offering innovative, eco-friendly, and affordable
+                solutions that create a better future for all.
                 </p>
               </div>
             </div>
