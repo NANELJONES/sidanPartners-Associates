@@ -140,7 +140,7 @@ const LookingFor = () => {
         </h5>
         <Link href={"/contactUs"} className="" >
               <button className="text-regular_text p-2  flex items-center gap-4 bg-primary_color">
-              <h6 className=" text-secondary_color  px-2">   Get In Touch </h6>
+              <h6 className=" text-secondary_color text-[1em] md:text-[1.5em] px-2 md:p-2 ">   Get In Touch </h6>
                 <IoArrowDownCircleOutline className="text-[2em] text-secondary_color rotate-[-90deg]"></IoArrowDownCircleOutline>
               </button>
             </Link>

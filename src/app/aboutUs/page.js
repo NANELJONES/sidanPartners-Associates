@@ -225,7 +225,7 @@ const Page = () => {
     },
 
     {
-      title: "Timelessness",
+      title: "Timeliness",
       description: " Delivering your dreams on schedule.",
       icons: <IoIosClock />,
     },
