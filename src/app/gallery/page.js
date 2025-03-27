@@ -19,7 +19,7 @@ const Page = () => {
   // Fetch gallery data
   const fetchGallery = useCallback(async () => {
     if (isLoading || !hasNextPage) return; // Prevent multiple fetches
-    console.log(gallery)
+    // console.log(gallery)
     console.log("gallery is being fetched")
     setIsLoading(true);
     try {

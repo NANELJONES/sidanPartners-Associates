@@ -36,6 +36,8 @@
 
 
 
+
+
 }
 
 .brick{
@@ -365,11 +367,11 @@ gap:  3px;
     @apply text-[0.8em] 
   }
  
-  p, h1, h2, h3, h4, h5, h6, pre {
+  p, h1, h2, h3, h4, h5, h6, pre , li{
     @apply cursor-pointer text-primary_color;
   }
   
-  p, label, input {
+  p, label, input,li {
     @apply text-[0.8em] md:text-[0.9em] duration-500;
   }
   

@@ -58,12 +58,12 @@ const page = () => {
       [name]: value,
     }));
 
-    console.log(applicaint_info)
+    // console.log(applicaint_info)
   };
 
   const onFileChange = (e) => {
     const file = e.target.files[0]; // Get the first selected file
-    console.log(file)
+    // console.log(file)
   
     if (!file) return; // No file selected, do nothing
   
@@ -100,7 +100,7 @@ const page = () => {
        e.preventDefault();
       
        setError(false);
-       console.log(applicaint_info)
+      //  console.log(applicaint_info)
      
        const { name, email, phoneNumber, country, location, cv } = applicaint_info;
      

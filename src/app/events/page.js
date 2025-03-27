@@ -11,7 +11,7 @@ const page = () => {
 
   const {events} =  useStateContext()
 
-  console.log("These are all the events: " , events)
+  // console.log("These are all the events: " , events)
 
   return (
  <>

@@ -27,7 +27,7 @@ const page = () => {
         setLoading(true);
         try {
           const fetchedEvent = await getSingleEvent(slug);
-          console.log("Fetched Post:", fetchedEvent);
+          // console.log("Fetched Post:", fetchedEvent);
   
           setEvent(fetchedEvent);
 
@@ -41,7 +41,7 @@ const page = () => {
       };
   
       fetchEvent();
-      console.log(event)
+      // console.log(event)
     }, [slug]); // Runs only when slug changes
   return (
     <>

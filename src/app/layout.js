@@ -146,6 +146,18 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="author" content="Sidan Associates and Partners" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-70RLG4EBY0"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-70RLG4EBY0');
+            `,
+          }}
+        />
+
       </head>
       <body className={`font- ${primary_text.className}`}>
         <Loading>

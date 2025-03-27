@@ -112,7 +112,7 @@ export const getGallery = async (first = 10, after = null) => {
 
   try {
     const response = await request(graphqlAPI, query, { first, after });
-    console.log("Fetched images:", response);
+    // console.log("Fetched images:", response);
     return response.galleriesConnection;
   } catch (error) {
     console.error("Error fetching gallery images:", error);
